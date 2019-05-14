@@ -1114,6 +1114,8 @@ selectMe(trig, $event) {
       if (theString == ", " || theString == " ") { this.input1 = ""; }
 
     }
+
+    }
 		//var currentClassName = pDiv.querySelector('#timeTag').className;
 
 		// check in currentObjs and set time
@@ -1156,7 +1158,7 @@ selectMe(trig, $event) {
               //console.log("theString: " + theString);
 		} */
     //}
-	}
+
 
   getTimeFromString(theString) {    // fi x todo - maybe? why do we have window.localstorage here?
 

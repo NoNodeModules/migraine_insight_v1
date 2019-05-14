@@ -6,6 +6,31 @@
 
 <ion-content fullscreen no-bounce has-bouncing="false" style="background-color:#ebedf2 !important;">
 
+  <!-- TOP PART -->
+  <div class="topWrap">
+      <div class="topWrapInner">
+
+          <!-- Coffee Cup Image -->
+          <img src="assets/images/coffee_in_cup.png" style="position:absolute;top:-20px;left:60%;width:120px !important;" />
+
+          <!-- LOGO IMAGE -->
+          <img src="assets/images/logoLong.png" style="position:absolute;top:45px;left:7%;width:45% !important;" />
+
+          <!-- words todo fix translate -->
+          <div style="position:absolute;top:70px;left:7%;width:200px !important;border:0px solid red;color:white;font-size:1.1em;line-height:17px;font-weight: normal;font-family: gotham;">
+            Let's find your triggers!
+          </div>
+
+          <!-- helper buttons -->
+          <div class="helper_icon ask_a_question">Ask A<br/>Question</div>
+          <div class="helper_icon track_triggers">Track<br/>Triggers</div>
+          <div class="helper_icon your_progress">Your<br/>Progress</div>
+
+      </div>
+  </div> <!-- topWrap -->
+
+
+  <hr>
     <!-- TOP PART -->
     <div class="topWrap">
 
@@ -84,6 +109,7 @@
         </div>
     </div>
   </div>
+
 
 <!-- PANEL WEEK 1 -->
 <div [ngClass]="{'hideMe' : panelWeek1_showMe == false}">
