@@ -1,0 +1,82 @@
+<!--  Generated template for the Setup3Page page. -->
+
+<ion-content class="mm_content_setup no-scroll" style="padding-bottom:30px !important;" no-bounce>
+
+  	<div class="setupTop">
+  		<div class="setupTopIconAndTitle">Tracker Setup</div>
+  	</div>
+
+    <ion-scroll class="setupMiddle center" style="padding-bottom:30px !important;" direction="y" no-bounce>
+
+        <div class="setupQuestionText">
+            Common non-food migraine triggers. Track any of these?
+        </div>
+        <br/>
+
+        <div class="wideWrap">
+          <button class="wideTileGreen" [ngClass]="{ 'dimBack': (on1 == false) }"
+          (click)="pickTrigger(1);">
+            <div class="wideTileWordTitleStyleCheckRight">Loud Noise</div>
+            <div class="trackThisBtnWrap">
+              <img id="trackThisBtn" src="img/checkmark_white_100.png" />
+            </div>
+          </button>
+
+          <button class="wideTileGreen" [ngClass]="{ 'dimBack': (on2 == false) }"
+          (click)="pickTrigger(2);">
+            <div class="wideTileWordTitleStyleCheckRight">Plane Flight</div>
+            <div class="trackThisBtnWrap">
+              <img id="trackThisBtn" src="img/checkmark_white_100.png" />
+            </div>
+          </button>
+
+          <div class="setupExplainText">Examples: Walking, gardening.<br/>&nbsp;<br/></div>
+
+          <button class="wideTileGreen" [ngClass]="{ 'dimBack': (on5 == false) }"
+          (click)="pickTrigger(5);">
+            <div class="wideTileWordTitleStyleCheckRight">Strenuous Exercise</div>
+            <div class="trackThisBtnWrap">
+              <img id="trackThisBtn" src="img/checkmark_white_100.png" />
+            </div>
+          </button>
+
+          <button class="wideTileGreen" [ngClass]="{ 'dimBack': (on6 == false) }"
+          (click)="pickTrigger(6);">
+            <div class="wideTileWordTitleStyleCheckRight">Insomnia</div>
+            <div class="trackThisBtnWrap">
+              <img id="trackThisBtn" src="img/checkmark_white_100.png" />
+            </div>
+          </button>
+
+          <button class="wideTileGreen dimBack" [ngClass]="{ 'dimBack': (on7 == false)}"
+          (click)="pickTrigger(7);" id="Excessive Sleep">
+            <div class="wideTileWordTitleStyleCheckRight">Excessive Sleep</div>
+            <div class="trackThisBtnWrap">
+              <img id="trackThisBtn" src="img/checkmark_white_100.png" />
+            </div>
+          </button>
+
+            <button class="wideTileGreen" [ngClass]="{ 'dimBack': (on4 == false) }"
+            (click)="pickTrigger(4);">
+              <div class="wideTileWordTitleStyleCheckRight">Light Exercise</div>
+              <div class="trackThisBtnWrap">
+                <img id="trackThisBtn" src="img/checkmark_white_100.png" />
+              </div>
+            </button>
+
+            <button class="wideTileGreen" [ngClass]="{ 'dimBack': (on3 == false) }"
+            (click)="pickTrigger(3);">
+              <div class="wideTileWordTitleStyleCheckRight">Sex</div>
+              <div class="trackThisBtnWrap">
+                <img id="trackThisBtn" src="img/checkmark_white_100.png" />
+              </div>
+            </button>
+
+    		</div>
+    </ion-scroll>
+
+    <div class="setupBottomBar">
+      <div class="mm_ButtonStyle3" tappable (tap)="goTo();">Next</div>
+    </div>
+
+</ion-content>

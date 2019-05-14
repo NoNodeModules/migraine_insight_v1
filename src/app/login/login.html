@@ -1,0 +1,57 @@
+<ion-content class="center no-scroll mm_content_noTopBar" style="background-color:#3d60b3;margin:auto;padding:0px;" no-bounce>
+
+<div style="width:100%;height:15%;margin:0px auto 20px auto">
+	<div style="width:320px;margin:auto;">
+			<img src="img/logo_long_856.png" style="border:0px solid red;max-height:34px;margin:65px auto 10px auto;width:70%;">
+	</div>
+</div>
+
+<div style="background-color:white;padding:20px 0px 30px 0px;">
+	<div style="width:320px;margin:auto;">
+	<!-- Form -->
+	<form [formGroup]="loginForm" (submit)="login();" novalidate class="fixpristine center"
+	style="text-align:center !important;">
+				<input type="text" formControlName="email" name="email" id="email" #email class="mm_input"
+	       	(focus)="errormessage = ''" onfocus="this.placeholder=''" placeholder="email address" autocorrect="off" autocapitalize="off" required ng-trim="false" />
+
+	      <input type="password" formControlName="password" name="password" id="password" #password class="mm_input"
+	       (focus)="errormessage = ''" onfocus="this.placeholder=''" placeholder="password" autocorrect="off" required ng-trim="false" />
+
+				<div class="systemMessage assertive" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">
+					Your password needs more than 6 characters.
+				</div>
+
+				<div class="systemMessage assertive" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">
+	          Please enter a valid email.
+				</div>
+
+				<div class="systemMessage" [ngClass]="{'hideMe': !errormessage}">
+	        	{{errormessage}}
+	      </div>
+
+	      <button class="mm_ButtonStyle1" style="margin-top:10px;" ion-button block type="submit">
+	          Login
+	      </button>
+  	</form>
+
+    <div class="color2Text mediumText center" style="margin:20px auto">- or -</div>
+
+    <button (click)="facebookLogin();">
+				<img src="img/btn_fb_login.png" style="margin:0px auto;width:280px; height:40px;border-radius:15px;" />
+		</button>
+
+	</div>
+</div>
+
+  <!-- BOTTOM -->
+	<div style="color:white;margin:25px 10%;font-size:14px;">
+		  <button style="float:left;color:inherit;font-size:inherit;letter-spacing: 1px !important;" (click)="register();">
+		    Register
+		  </button>
+
+			<button style="float:right;color:inherit;font-size:inherit;letter-spacing: 1px !important;" (click)="resetPwd();">
+		    Forgot Password
+		  </button>
+  </div>
+
+</ion-content>

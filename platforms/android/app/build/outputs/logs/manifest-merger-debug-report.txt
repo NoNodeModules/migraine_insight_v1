@@ -1,0 +1,376 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12
+MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/93560c84fd810736e99d501e53ecda66/AndroidManifest.xml:21:1-31:12
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:17:1-47:12
+MERGED from [:CordovaLib] /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/CordovaLib/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:20:1-27:12
+MERGED from [com.facebook.android:facebook-login:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-login-4.38.1.aar/b09ace424de195dc521201269199cd11/AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-share:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-share-4.38.1.aar/f3aa1457548de2e7fa11d3b358aa9c89/AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:21:1-37:12
+MERGED from [com.facebook.android:facebook-places:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-places-4.38.1.aar/f033284938708ba0b3cea20040ef2926/AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-applinks:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.38.1.aar/408a2249b33796130aa417bd6f5be9aa/AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-messenger:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.38.1.aar/c434dd7cc2efc073ae81c318737ccf27/AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:21:1-35:12
+MERGED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:21:1-53:12
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-v4-impl-16.0.5.aar/d44806f0d0a4f1aff8ffbe3fe25df6de/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.4] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.4.aar/1e1edfd9e71540f9fc6db21fc007960f/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/76e709919a862feafe41d20dfaebd4f8/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/2ec2945fb405d34b879807f1dc5cd0ae/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/df4b3df2ba51eb0291edfd055f984616/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/6c69be46c323e7b7e30dcbba5da6e380/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/b3877c4f8d75c41c1491caf6824e89a3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/364a44d510ba70aae2cde1f66205cd62/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/6d47f5d64e67ca14c65bcf0937e4c440/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/b628ed5a23e989bbc93966295af983b7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/4c8079d6c3769a6080f8333be04542ad/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customtabs:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.2.aar/1a81f230ef968c755eb525cb416c76f0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/43f87d1ea756cdfcc0dc381503ea0d3a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/07bdae4229cba2c870a6406d1d3886ca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/1875040a414cfb4898925b02bd385dc8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/88bd961b90235bf379e659dedc130dfa/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/ce62a26fc0dedd9033c0bca11fb0aadb/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/1bea84eaf76ab5120af8c0d3415e39b1/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12
+	package
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:100-141
+		INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:74-99
+		INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+	android:hardwareAccelerated
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:11-45
+	xmlns:android
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:142-200
+	android:versionCode
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:46-73
+		INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+supports-screens
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:3:5-191
+	android:largeScreens
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:3:49-76
+	android:smallScreens
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:3:132-159
+	android:normalScreens
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:3:77-105
+	android:xlargeScreens
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:3:160-188
+	android:resizeable
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:3:106-131
+	android:anyDensity
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
+uses-permission#android.permission.INTERNET
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:4:22-64
+application
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:5:5-27:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/93560c84fd810736e99d501e53ecda66/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/93560c84fd810736e99d501e53ecda66/AndroidManifest.xml:28:5-29:19
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:29:5-45:19
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:29:5-45:19
+MERGED from [com.facebook.android:facebook-login:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-login-4.38.1.aar/b09ace424de195dc521201269199cd11/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-login:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-login-4.38.1.aar/b09ace424de195dc521201269199cd11/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-share:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-share-4.38.1.aar/f3aa1457548de2e7fa11d3b358aa9c89/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-share:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-share-4.38.1.aar/f3aa1457548de2e7fa11d3b358aa9c89/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:28:5-35:19
+MERGED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:28:5-35:19
+MERGED from [com.facebook.android:facebook-places:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-places-4.38.1.aar/f033284938708ba0b3cea20040ef2926/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-places:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-places-4.38.1.aar/f033284938708ba0b3cea20040ef2926/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-applinks:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.38.1.aar/408a2249b33796130aa417bd6f5be9aa/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-applinks:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.38.1.aar/408a2249b33796130aa417bd6f5be9aa/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-messenger:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.38.1.aar/c434dd7cc2efc073ae81c318737ccf27/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-messenger:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.38.1.aar/c434dd7cc2efc073ae81c318737ccf27/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:28:5-33:19
+MERGED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:28:5-33:19
+MERGED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:28:5-51:19
+MERGED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:28:5-51:19
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-v4-impl-16.0.5.aar/d44806f0d0a4f1aff8ffbe3fe25df6de/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-v4-impl-16.0.5.aar/d44806f0d0a4f1aff8ffbe3fe25df6de/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:29:5-20
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:29:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.4] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.4.aar/1e1edfd9e71540f9fc6db21fc007960f/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.4] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.4.aar/1e1edfd9e71540f9fc6db21fc007960f/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/76e709919a862feafe41d20dfaebd4f8/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/76e709919a862feafe41d20dfaebd4f8/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/2ec2945fb405d34b879807f1dc5cd0ae/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/2ec2945fb405d34b879807f1dc5cd0ae/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/df4b3df2ba51eb0291edfd055f984616/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/df4b3df2ba51eb0291edfd055f984616/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/6c69be46c323e7b7e30dcbba5da6e380/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/6c69be46c323e7b7e30dcbba5da6e380/AndroidManifest.xml:22:5-26:19
+	android:supportsRtl
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:5:114-140
+	android:label
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:5:81-113
+	android:hardwareAccelerated
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:5:18-52
+	android:icon
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:5:53-80
+activity#com.shinynewapp.migraineinsight.MainActivity
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:6:9-11:20
+	android:label
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:6:97-134
+	android:launchMode
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:6:135-165
+	android:windowSoftInputMode
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:6:257-299
+	android:configChanges
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:6:19-96
+	android:theme
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:6:194-256
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:6:166-193
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:7:13-10:29
+	android:label
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:7:28-65
+action#android.intent.action.MAIN
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:8:17-69
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:8:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:9:17-77
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:9:27-74
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:12:9-102
+	android:value
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:12:66-99
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:12:20-65
+meta-data#com.facebook.sdk.ApplicationName
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:13:9-106
+	android:value
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:13:68-103
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:13:20-67
+activity#com.facebook.FacebookActivity
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:14:9-186
+MERGED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:29:9-32:66
+MERGED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:29:9-32:66
+	android:label
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:14:103-138
+	android:configChanges
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:14:19-102
+	android:theme
+		ADDED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:32:13-63
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:14:139-183
+receiver#com.google.android.gms.analytics.AnalyticsReceiver
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:15:9-19:20
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:30:9-34:20
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:30:9-34:20
+	android:enabled
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:15:19-41
+	android:exported
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:33:13-37
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:15:42-107
+intent-filter#action:name:com.google.android.gms.analytics.ANALYTICS_DISPATCH
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:16:13-18:29
+action#com.google.android.gms.analytics.ANALYTICS_DISPATCH
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:17:17-94
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:17:25-91
+service#com.google.android.gms.analytics.AnalyticsService
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:20:9-133
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:36:9-39:40
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:36:9-39:40
+	android:enabled
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:20:18-40
+	android:exported
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:20:41-65
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:20:66-130
+receiver#com.google.android.gms.analytics.CampaignTrackingReceiver
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:21:9-25:20
+	android:enabled
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:21:19-41
+	android:exported
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:21:42-65
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:21:66-138
+intent-filter#action:name:com.android.vending.INSTALL_REFERRER
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:22:13-24:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:23:17-79
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:23:25-76
+service#com.google.android.gms.analytics.CampaignTrackingService
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:26:9-140
+	android:enabled
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:26:18-40
+	android:exported
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:26:41-65
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:26:66-137
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:29:5-71
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:29:22-68
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:30:5-79
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:30:22-76
+uses-sdk
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/93560c84fd810736e99d501e53ecda66/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/93560c84fd810736e99d501e53ecda66/AndroidManifest.xml:24:5-26:41
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.android:facebook-login:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-login-4.38.1.aar/b09ace424de195dc521201269199cd11/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-login:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-login-4.38.1.aar/b09ace424de195dc521201269199cd11/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-share:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-share-4.38.1.aar/f3aa1457548de2e7fa11d3b358aa9c89/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-share:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-share-4.38.1.aar/f3aa1457548de2e7fa11d3b358aa9c89/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-places:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-places-4.38.1.aar/f033284938708ba0b3cea20040ef2926/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-places:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-places-4.38.1.aar/f033284938708ba0b3cea20040ef2926/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-applinks:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.38.1.aar/408a2249b33796130aa417bd6f5be9aa/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-applinks:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-applinks-4.38.1.aar/408a2249b33796130aa417bd6f5be9aa/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-messenger:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.38.1.aar/c434dd7cc2efc073ae81c318737ccf27/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-messenger:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.38.1.aar/c434dd7cc2efc073ae81c318737ccf27/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:24:5-26:41
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-v4-impl-16.0.5.aar/d44806f0d0a4f1aff8ffbe3fe25df6de/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-v4-impl-16.0.5.aar/d44806f0d0a4f1aff8ffbe3fe25df6de/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.4] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.4.aar/1e1edfd9e71540f9fc6db21fc007960f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.4] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.4.aar/1e1edfd9e71540f9fc6db21fc007960f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/76e709919a862feafe41d20dfaebd4f8/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/76e709919a862feafe41d20dfaebd4f8/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/2ec2945fb405d34b879807f1dc5cd0ae/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/2ec2945fb405d34b879807f1dc5cd0ae/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/df4b3df2ba51eb0291edfd055f984616/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/df4b3df2ba51eb0291edfd055f984616/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/6c69be46c323e7b7e30dcbba5da6e380/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/6c69be46c323e7b7e30dcbba5da6e380/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/b3877c4f8d75c41c1491caf6824e89a3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/b3877c4f8d75c41c1491caf6824e89a3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/364a44d510ba70aae2cde1f66205cd62/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/364a44d510ba70aae2cde1f66205cd62/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/6d47f5d64e67ca14c65bcf0937e4c440/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/6d47f5d64e67ca14c65bcf0937e4c440/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/b628ed5a23e989bbc93966295af983b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/b628ed5a23e989bbc93966295af983b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/4c8079d6c3769a6080f8333be04542ad/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/4c8079d6c3769a6080f8333be04542ad/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.2.aar/1a81f230ef968c755eb525cb416c76f0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.2.aar/1a81f230ef968c755eb525cb416c76f0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/43f87d1ea756cdfcc0dc381503ea0d3a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/43f87d1ea756cdfcc0dc381503ea0d3a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/07bdae4229cba2c870a6406d1d3886ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/07bdae4229cba2c870a6406d1d3886ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/1875040a414cfb4898925b02bd385dc8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/1875040a414cfb4898925b02bd385dc8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/88bd961b90235bf379e659dedc130dfa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/88bd961b90235bf379e659dedc130dfa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/ce62a26fc0dedd9033c0bca11fb0aadb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/ce62a26fc0dedd9033c0bca11fb0aadb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/1bea84eaf76ab5120af8c0d3415e39b1/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/1bea84eaf76ab5120af8c0d3415e39b1/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		ADDED from [com.facebook.android:facebook-android-sdk:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/93560c84fd810736e99d501e53ecda66/AndroidManifest.xml:26:9-38
+	android:minSdkVersion
+		INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:27:5-68
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:27:5-68
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-16.0.5.aar/7888aa2f5f6cc54ca758bb80abb4558f/AndroidManifest.xml:27:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:27:22-65
+service#com.google.android.gms.analytics.AnalyticsJobService
+ADDED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:40:9-44:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:42:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:43:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:44:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.5] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-analytics-16.0.5.aar/e769e02653d4c91f5fa904dcaa0afef5/AndroidManifest.xml:41:13-80
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12 reason: org.apache.cordova has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12 reason: org.apache.cordova has a targetSdkVersion < 4
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/src/main/AndroidManifest.xml:2:1-31:12 reason: org.apache.cordova requested WRITE_EXTERNAL_STORAGE
+activity#com.facebook.CustomTabMainActivity
+ADDED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:33:9-71
+	android:name
+		ADDED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:33:19-68
+activity#com.facebook.CustomTabActivity
+ADDED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:34:9-67
+	android:name
+		ADDED from [com.facebook.android:facebook-common:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-common-4.38.1.aar/dde1d896a8acd3b78e4126165dfee931/AndroidManifest.xml:34:19-64
+provider#com.facebook.marketing.internal.MarketingInitProvider
+ADDED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:29:9-32:40
+	android:authorities
+		ADDED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:31:13-73
+	android:exported
+		ADDED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-marketing:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-marketing-4.38.1.aar/ed74ffd858698d40861f4be691d6c0e7/AndroidManifest.xml:30:13-81
+provider#com.facebook.internal.FacebookInitProvider
+ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:39:9-42:40
+	android:authorities
+		ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:41:13-72
+	android:exported
+		ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:42:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:40:13-70
+receiver#com.facebook.CurrentAccessTokenExpirationBroadcastReceiver
+ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:44:9-50:20
+	android:exported
+		ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:45:13-86
+intent-filter#action:name:com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
+ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:47:13-49:29
+action#com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
+ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:48:17-95
+	android:name
+		ADDED from [com.facebook.android:facebook-core:4.38.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/facebook-core-4.38.1.aar/babcca392c9300a152b5d8763cab5727/AndroidManifest.xml:48:25-92
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/01caf839069aa5e1ae7b043b0d81e589/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/6c69be46c323e7b7e30dcbba5da6e380/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/6c69be46c323e7b7e30dcbba5da6e380/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/lynnsmith/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/6c69be46c323e7b7e30dcbba5da6e380/AndroidManifest.xml:24:13-58

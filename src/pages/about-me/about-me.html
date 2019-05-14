@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar hideBackButton="true"> <!-- If you don't need back here -->
+      <!-- <button ion-button menuToggle start>
+          <img src="img/menu.png" class="menuImg" />
+      </button> -->
+      <ion-title>About Me</ion-title>
+      <div style="position:absolute;top:35px;left:80%;color:white;border:0px solid yellow;" tappable (tap)="openStats();oStatshide = false;">
+          Settings
+      </div>
+  </ion-navbar>
+</ion-header>
+<ion-content class="mm_content" padding no-bounce>
+
+  <div style="padding:10px !important;" no-bounce>
+        <div class="mm_ButtonStyle4" type="button" name="button" (click)="goToYourTriggers()">Your Triggers</div>
+        <div class="mm_ButtonStyle4" type="button" name="button" (click)="goToPersonalInformation()">Your Personal Information</div>
+        <div class="mm_ButtonStyle4" type="button" name="button" (click)="goToQuizzes()">Your Quizzes</div>
+  </div>
+</ion-content>
+
+<!-- view : overlay
+<div class="oLay scrollMe" style="margin-top:20px;" (click)="oLay1Hide = true;" [ngClass]="{'hideMe' : oLay1Hide}">
+	<div class="popUpWrap">
+    <div class="popUpShort">
+        <div class="popUpContent center" (click)="$event.stopPropagation();">
+            <button class="mm_ButtonStyle4" type="button" name="button"  onclick="window.open('mailto:hello@migraineinsight.com', '_system', 'location=yes');">Send us an Email</button>
+
+            <div class="deleteBtnWrapInline">
+              <button (click)="oLay1Hide = true;" class="goBtn">Ok</button>
+            </div>
+            <br/>
+        </div>
+    </div>
+
+	   <button class="btn_closeMe" (click)="oLay1Hide = true;">X</button>
+	</div>
+</div> -->

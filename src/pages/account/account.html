@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar hideBackButton="true"> <!-- If you don't need back here -->
+      <button ion-button menuToggle start>
+          <img src="img/menu.png" class="menuImg" />
+      </button>
+      <ion-title>Settings and More</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="mm_content" padding no-bounce>
+
+  <div style="padding:10px !important;" no-bounce>
+
+        <div class="mm_ButtonStyle4" type="button" name="button" (click)="logout2()">Logout</div>
+        <button class="mm_ButtonStyle4" type="button" name="button" (click)="resetPwd()">Change Password</button>
+
+        <!-- <button class="mm_ButtonStyle4" type="button" name="button" (click)="oLay1Hide = false">Send Feedback</button> -->
+        <button class="mm_ButtonStyle4" type="button" name="button" onclick="window.open('mailto:hello@migraineinsight.com', '_system', 'location=yes');">Send us an Email</button>
+
+        <!-- <button class="mm_ButtonStyle4" type="button" name="button" onclick="window.open('https://lynn196.typeform.com/to/NJprJj', '_system', 'location=yes');">Report a Bug</button> -->
+        <button class="mm_ButtonStyle4" type="button" name="button" (click)="deleteAcct();">Delete Account</button>
+
+        <br/>
+        <div style="margin-left:5px;float:center;color:gray" (click)="hideCurrentDB = false;"> Account: {{ useremail }} </div>
+
+        <br/>
+        <div style="margin-left:5px;font-size:13px;color:steelblue;margin-top:30px !important;" [ngClass]="{'hideMe': hideCurrentDB}">
+          {{ registrationDate | date: 'MM/dd/yyyy - hh:mm a'}}<br/>
+          version: 1.0<br/>
+          {{ currentDB }}
+      </div>
+  </div>
+</ion-content>
+
+<!-- view : overlay -->
+<div class="oLay scrollMe" style="margin-top:20px;" (click)="oLay1Hide = true;" [ngClass]="{'hideMe' : oLay1Hide}">
+	<div class="popUpWrap">
+    <div class="popUpShort">
+        <div class="popUpContent center" (click)="$event.stopPropagation();">
+            <button class="mm_ButtonStyle4" type="button" name="button"  onclick="window.open('mailto:hello@migraineinsight.com', '_system', 'location=yes');">Send us an Email</button>
+            <!-- <button class="mm_ButtonStyle4" style="margin-bottom:40px !important;" type="button" name="button" onclick="window.open('https://lynn196.typeform.com/to/NJprJj', '_system', 'location=yes');">Report A Bug</button> -->
+
+            <div class="deleteBtnWrapInline">
+              <button (click)="oLay1Hide = true;" class="goBtn">Ok</button>
+            </div>
+            <br/>
+        </div>
+    </div>
+
+	   <button class="btn_closeMe" (click)="oLay1Hide = true;">X</button>
+	</div>
+</div>

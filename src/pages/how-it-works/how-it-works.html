@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar hideBackButton="true"> <!-- If you don't need back here -->
+      <button ion-button menuToggle start>
+          <img src="img/menu.png" class="menuImg" />
+      </button>
+      <ion-title>How It Works</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="mm_content howitworks" id="pickTriggers">
+
+  <ion-list [virtualScroll]="stubList" [virtualTrackBy]="name" [bufferRatio]="3.1" style="width:320px;margin:auto;">
+
+    <ion-item *virtualItem="let stub" class="howitworks" style="height:2410px !important;width:310px;margin:0px 10px;padding:0px;text-align:left;">
+
+        <span class="question">How do I track with this app?</span>
+        <span class="answer">Track triggers and migraines each time they happen. See the results page for your progress. The longer you track, the more accurate your results!</span>
+
+        <span class="question" style="padding-top:20px;">How do I track even faster?</span>
+        <!-- <img src="img/tip1.png" style="padding-top:10px;padding-left:0px;width:100%;"> -->
+
+        <img src="img/tip2.png" style="padding-top:20px;padding-left:0px;padding-bottom:10px;width:100%;">
+
+        <span class="question">How does the scoring work?</span>
+        <span class="answer">The score (0 - 100) reflects how often you get a migraine after a trigger, raised or lowered based other factors.<br/><br/>You can think of it as a percent. For example, tracking a trigger and getting migraine 4 out of 5 times is 80%.<br/><br/>But, the score is increased if the migraines come quickly after the trigger. And, it is adjusted to a lower score if they are significantly delayed. Also, we adjust the score upwards if we find a cluster pattern (e.g. always getting a migraine exactly the same time after a trigger), based on the strength of the cluster. Besides clusters, there are other adjustments such as trigger amounts and times a trigger is tracked that factor into the final score.<br/><br/>The higher the score, the more that trigger is correlated to your migraines.</span>
+
+        <span class="question">How accurate does the time have to be?</span>
+        <span class="answer">If you don't mark a trigger at the exact time it happens, that's alright. Don't stress about it. The app still works. The most important thing is to track every time your encounter a trigger.<br/><br/>Still, the more accurate you track the time of events, the more accurate your results.</span>
+
+        <span class="question">Do I need to track every day?</span>
+        <span class="answer">Yes, you need to track triggers each time they happen. For our analysis, when a trigger <b>does not</b> produce a migraine is just as important as when it does. Knowing complete information leads to better results.</span>
+
+        <span class="question">What does the average time between migraines show?</span>
+        <span class="answer">It shows the average of the previous 2 months.</span>
+
+        <span class="question">How many times to I need to track a trigger to get results?</span>
+        <span class="answer">A tracker needs 5 entries before it will show in results.</span>
+
+        <span class="question">Are you doctors?</span>
+        <span class="answer">No. This app has been built by really smart data people. We are not doctors. Migraines and headaches are serious. Please see a doctor if you get headaches or migraines. This app does not diagnose or treat any medical conditions. This app provides information that could lead to a reduction in symptoms. This is not a treatment plan.</span>
+
+        <!-- <span class="question">What if I have more than one migraine a day?</span>
+        <span class="answer">This is an unusual scenario. Just record your first migraine.</span> -->
+
+        <!-- <span class="question">What do you check for in your algorithms?</span>
+        <span class="answer">We check for more migraines:
+            <span class="answerBullet">1) after a single trigger.</span>
+            <span class="answerBullet">2) after an increase of a single trigger.</span>
+            <span class="answerBullet">3) after two triggers combined.</span>
+            <span class="answerBullet">4) during specific days of your period.</span>
+            <span class="answerBullet">5) after increases or decreases of caffeine.</span>
+            <span class="answerBullet">6) ... and a lot more.</span>
+        </span> -->
+
+        <span class="question">What if everything is scoring low in the results?</span>
+        <span class="answer">The triggers that show the highest score are the ones most likely to be affecting your migraines, even when none of the scores are hitting a particularly high score.<br/><br/>You could also try experimenting with other triggers. Are there any other triggers you could track?</span>
+
+        <span class="question">What if I want to reset the app and clear my data?</span>
+        <span class="answer">If you want to clear all your data and start over, go to account and use the delete account button. You can make a new account using the same email address and start over.<br/><br/>You shouldn't need to reset the data. If you stop tracking for a while, just restart. The app will be able to score correctly, even with gaps in tracking.</span>
+
+  </ion-item>
+</ion-list>
+</ion-content>

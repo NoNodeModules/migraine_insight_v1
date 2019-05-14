@@ -1,0 +1,114 @@
+<!--  Generated template for the Setup3Page page. -->
+
+<ion-content class="mm_content_setup" style="padding-bottom:30px !important;" no-bounce>
+
+  	<div class="setupTop">
+  		<div class="setupTopIconAndTitle">Tracker Setup</div>
+  	</div>
+
+    <ion-scroll class="setupMiddle center" style="padding-bottom:80px !important;" direction="y" no-bounce>
+
+        <div class="setupQuestionText">
+            These foods cause migraines in some people. Track any of these?
+        </div>
+        <br/>
+
+        <div class="wideWrap">
+          <button class="wideTileGreen"[ngClass]="{'dimBack': on1 == false}"
+          (click)="pickTrigger(1);" id="Soft Cheese">
+    				<div class="wideTileWordTitleStyleCheckRight ng-binding">Soft Cheese</div>
+    				<div class="trackThisBtnWrap">
+    					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+    				</div>
+    			</button>
+
+          <button class="wideTileGreen"[ngClass]="{'dimBack': on2 == false}"
+          (click)="pickTrigger(2);" id="Hard Cheese">
+    				<div class="wideTileWordTitleStyleCheckRight ng-binding">Hard Cheese</div>
+    				<div class="trackThisBtnWrap">
+    					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+    				</div>
+    			</button>
+
+          <button class="setupExplainText" style="padding-top:4px !important;"
+          (click)="o1hide = false;">Why soft and hard cheese?<br/>&nbsp;<br/></button>
+
+          <button class="wideTileGreen"[ngClass]="{'dimBack': on3 == false}"
+          (click)="pickTrigger(3);" id="Milk">
+    				<div class="wideTileWordTitleStyleCheckRight ng-binding">Milk</div>
+    				<div class="trackThisBtnWrap">
+    					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+    				</div>
+    			</button>
+
+          <button class="wideTileGreen"[ngClass]="{'dimBack': on4 == false}"
+          (click)="pickTrigger(4);" id="Citrus Fruit">
+    				<div class="wideTileWordTitleStyleCheckRight ng-binding">Citrus Fruit</div>
+    				<div class="trackThisBtnWrap">
+    					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+    				</div>
+    			</button>
+
+          <button class="wideTileGreen"[ngClass]="{'dimBack': on5 == false}"
+          (click)="pickTrigger(5);" id="MSG">
+    				<div class="wideTileWordTitleStyleCheckRight ng-binding">MSG</div>
+    				<div class="trackThisBtnWrap">
+    					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+    				</div>
+    			</button>
+
+          <button class="wideTileGreen"[ngClass]="{'dimBack': on6 == false}"
+          (click)="pickTrigger(6);" id="Artificial Sweetener">
+    				<div class="wideTileWordTitleStyleCheckRight ng-binding">Artificial Sweetener</div>
+    				<div class="trackThisBtnWrap">
+    					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+    				</div>
+    			</button>
+
+          <button class="wideTileGreen"[ngClass]="{'dimBack': on7 == false}"
+          (click)="pickTrigger(7);" id="Salty Food">
+    				<div class="wideTileWordTitleStyleCheckRight ng-binding">Salty Food</div>
+    				<div class="trackThisBtnWrap">
+    					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+    				</div>
+    			</button>
+
+          <button class="wideTileGreen"[ngClass]="{'dimBack': on8 == false}"
+          (click)="pickTrigger(8);" id="Smoked Food">
+    				<div class="wideTileWordTitleStyleCheckRight ng-binding">Smoked Food</div>
+    				<div class="trackThisBtnWrap">
+    					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+    				</div>
+    			</button>
+          <br/>&nbsp;<br/>
+    </div>
+    </ion-scroll>
+
+    <div class="setupBottomBar">
+      <div class="mm_ButtonStyle3" tappable (tap)="goTo();">Next</div> <!-- 'app.setupPickTriggers3' -->
+    </div>
+
+</ion-content>
+
+
+<!-- view : overlay -->
+<div class="oLay scrollMe" [ngClass]="{'hideMe' : o1hide}" (click)="o1hide = true;">
+<!-- <ion-scroll direction="y" style="height:100% !important;padding:0px 0px 20px 0px !important;"> -->
+	<div class="popUpWrap">
+    <div class="popUpShort">
+        <div class="popUpContent center">
+            <span style="font-size:20px;">Why soft and hard cheese?</span><br/><br/>
+            <span style="font-size:16px;">We recommend you track soft and hard cheese separately because they tend to cause migraines differently in different people.<br/><br/>
+            Soft cheeses include brie, cream cheese and bleu cheese. Hard cheeses are firm - like cheddar and gouda.<br/><br/>
+            If you want to track a specific cheese (e.g. cheddar cheese), you will have an opportunity later to set up custom triggers.</span>
+            <br/><br/><br/>
+            <div class="deleteBtnWrapInline">
+              <button (click)="o1hide = true;" class="goBtn">Ok</button>
+            </div>
+            <br/>
+        </div>
+    </div>
+	<button class="btn_closeMe" (click)="o1hide = true;">X</button>
+	</div>
+<!-- </ion-scroll> -->
+</div>

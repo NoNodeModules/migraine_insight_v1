@@ -1,0 +1,79 @@
+<!-- <ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button class="loginBtn" (tap)="goToLogin();">
+        Login
+    </button>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content class="center no-scroll mm_content_noTopBar" style="background-color:#3d60b3;margin:auto;padding:0px;" no-bounce>
+
+<div style="width:100%;height:15%;">
+	<div style="width:320px;margin:auto;">
+			<img src="img/logo_long_856.png" style="border:0px solid red;max-height:34px;margin:65px auto 10px auto;width:70%;">
+	</div>
+</div>
+
+<div style="background-color:white;padding:20px 0px 30px 0px;">
+<div style="width:320px;margin:auto;">
+
+	<!-- Form -->
+	<form [formGroup]="registerForm" (submit)="doRegister();" novalidate class="fixpristine center" style="text-align:center !important;">
+
+        <input type="text" formControlName="email" name="email" id="email" #email class="mm_input"
+       (focus)="errormessage = ''" onfocus="this.placeholder=''" placeholder="email address" autocorrect="off" autocapitalize="off" required ng-trim="false"
+       />
+
+      <input type="password" formControlName="password" name="password" id="password" #password class="mm_input"
+       (focus)="errormessage = ''" onfocus="this.placeholder=''" placeholder="password" autocorrect="off" required ng-trim="false" />
+
+      <div style="position:relative;height:40px !important;margin:10px 0px 0px 38px;">
+
+          <ion-checkbox id="terms" style="position:absolute; top:0px; left:0px;" [(ngModel)]="terms" [ngModelOptions]="{standalone: true}" >
+          </ion-checkbox>
+          <div class="color2SlightlyLighterText" style="position:absolute; top:2px; left:28px;z-index:2;font-size:14px;">
+              I agree to
+              <div style="display:inline;text-decoration:underline;" onclick="window.open('http://migraineinsight.com/app/termsofservice.html', '_system', 'location=yes');">
+                terms of use
+              </div>
+              and
+              <div style="display:inline;text-decoration:underline;" onclick="window.open('http://migraineinsight.com/app/privacy.html', '_system', 'location=yes');">
+                policies.
+              </div>
+          </div>
+
+      </div>
+
+      <div class="systemMessage" *ngIf="!registerForm.controls.password.valid  && (passwordChanged || submitAttempt)">
+        Your password needs more than 6 characters.
+      </div>
+      <div class="systemMessage" *ngIf="!registerForm.controls.email.valid  && (emailChanged || submitAttempt)">
+        Please enter a valid email.
+      </div>
+
+      <div class="systemMessage" [ngClass]="{'hideMe': !errormessage}">
+        {{errormessage}}
+      </div>
+    <button class="mm_ButtonStyle1" ion-button block type="submit">
+      Register
+    </button>
+  </form>
+
+  <div class="mediumText center color2Text" style="margin:20px 0px 5px 0px;">- or -</div>
+
+  <button (click)="signupWithFB();">
+    <img src="img/btn_fb_signup.png" style="margin:12px 0px 0px 0px;width:280px; height:40px;border-radius:15px;" />
+  </button>
+
+  </div>
+</div>
+
+  <!-- BOTTOM -->
+  <div style="color:white;margin:15px 20px;font-size:14px;">
+      <button style="margin-top:15px !important;display:inline;color:inherit;font-size:inherit;letter-spacing: 1px !important;" (click)="goToLogin();">
+       Login
+      </button>
+  </div>
+
+</ion-content>

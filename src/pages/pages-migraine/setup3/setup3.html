@@ -1,0 +1,54 @@
+<!--  Generated template for the Setup3Page page. -->
+
+<ion-content class="mm_content_setup no-scroll" no-bounce>
+
+  	<div class="setupTop">
+  		<div class="setupTopIconAndTitle">Tracker Setup</div>
+  	</div>
+
+    <ion-scroll class="setupMiddle center" direction="y" no-bounce>
+
+        <div class="setupQuestionText">
+            Alcohol can affect migraines.
+            </div>
+            <div style="height:10px;line-height:10px;margin:0px;border:0px solid purple;">&nbsp;</div>
+
+            <div class="wideWrap"  style="margin-bottom:20px !important;">
+                <button class="wideTile" [ngClass]="{ 'dimBack' : noAl == false }"
+                (click)="noAlcohol();">
+                    <div class="wideTileWordTitleStyleCheckLeft">No Alcohol</div>
+                    <div class="trackThisBtnWrapLeft" [ngClass]="{'hideMe' : noAl != true}">
+                        <img id="trackThisBtn" class="showMe" src="img/checkmark_white_100.png" />
+                    </div>
+                </button>
+              </div>
+              <div class="setupQuestionText">
+              Yes, I drink:
+              <div style="height:2px;line-height:13px;margin:0px;border:0px solid purple;">&nbsp;</div>
+          </div>
+
+        <div class="wideWrap">
+          <button class="wideTileGreen" [ngClass]="{'dimBack' : (trig.onoff == false)}"
+          (click)="pickTrigger(trig);" *ngFor="let trig of triggerList">
+                <div class="wideTileWordTitleStyleCheckRight">{{ trig.name }}</div>
+                <div class="trackThisBtnWrap">
+                  <img id="trackThisBtn" src="img/checkmark_white_100.png">
+                </div>
+          </button>
+        </div>
+
+    </ion-scroll>
+
+    <div class="setupBottomBar">
+      <div class="mm_ButtonStyle3" tappable (tap)="goTo();">Next</div>
+    </div>
+
+</ion-content>
+
+    <!-- <div class="wideTile" *ngFor="trig in triggerList" [ngClass]="{'greenBack' : (on2), 'dimBack' : (on2 == false)}"
+    (click)="pickTrigger();" id="Tea">
+      <div class="wideTileWordTitleStyleCheckRight ng-binding">Tea</div>
+      <div class="trackThisBtnWrap">
+        <img id="trackThisBtn" src="img/checkmark_white_100.png">
+      </div>
+    </div> -->

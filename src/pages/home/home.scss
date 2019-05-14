@@ -1,0 +1,270 @@
+page-home {
+
+  img {
+    width:100% !important;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  .scroll-content {
+    overflow-scroll:false;
+  }
+
+  /**
+   * Add spacing to bottom of pages
+   */
+  .page-content {
+    margin-bottom: 80px;
+  }
+
+  /**
+   * Add color to layout icons.
+   */
+  .layout-icon__region {
+    fill: #f5f5f2;
+    stroke: #666;
+  }
+
+  html.framed body { overflow-x:hidden; }
+
+  /* this is for the article list views, mostly */
+  .for-export .field--type-text-with-summary { display:none !important; }
+
+  html.framed .path-migraine-articles-list,
+  html.framed .content-header,
+  html.framed .region-breadcrumb,
+  html.framed .field--name-field-tags,
+  html.framed .node-readmore,
+  html.framed .node__links,
+  html.framed .field--name-field-order-on-list,
+  html.framed .node__meta,
+  html.framed .toolbar-oriented
+  { display:none !important; }
+
+  /* see the the core - themes - seven - templates - page.html.twig for the html.framed corresponding javascript
+  html.framed .page-node-type-article .node__meta,
+  html.framed .page-node-type-article .path-migraine-articles-list,
+  html.framed .page-node-type-article .content-header,
+  html.framed .page-node-type-article .region-breadcrumb,
+  html.framed .page-node-type-article .field--name-field-tags,
+  html.framed .page-node-type-article .node__links,
+  html.framed .page-node-type-article .field--name-field-order-on-list
+  { display:none !important; border:0px solid red !important; } */
+
+  html.framed ul, html.framed .page-node-type-article ul { list-style-type:none !important; margin:0px !important; padding: 10px !important; }
+  html.framed ul li, html.framed .page-node-type-article ul li { list-style-type:none !important; border: 1px solid #bbbbbb; padding: 0px; margin: 10px 0px; background-color:#f1f1f1; }
+  html.framed .page-node-type-article .layout-container { padding: 10px !important;  }
+  html.framed .field--name-title, html.framed .page-node-type-article .field--name-title {font-weight: normal !important; }
+  html.framed img, html.framed .page-node-type-article img { width:100% !important; }
+
+  html.framed h2, html.framed .page-node-type-article h2 { margin: 10px !important; }
+  html.framed a, html.framed .link  { color:#333333 !important; }
+
+  html.framed .layout-container { margin:0px !important; padding:0px !important; }
+
+  html.framed body { background-color:#ebedf2; }
+
+
+
+  /* THIS IS FOR HOME AREA */
+
+  .item { background-color: #ebedf2; }
+
+    .surveyQuestionText, .resultsCardText {
+    	border:0px solid fuchsia;
+    	width:100%;
+    	padding:8px 0 0 10px;
+    	text-align:left;
+    	color:black;
+    	font:20px bold; font-family: 'VagLight', sans-serif;
+    }
+    .quizQuestionCard, .resultsCard {
+      position:absolute;
+      top:0px;
+      left: 0px;
+      width:100%;
+      padding:10px;
+      background-color:#eeeeee;
+      color:black;
+    }
+    .surveySmallText {
+    	color:#333333;
+    	font:14px bold;
+    	font-family: 'VagLight', sans-serif;
+    }
+
+    .questionBar {
+      color:black;
+      background-color:white;
+      border:1px solid green;
+      padding:10px;
+      margin:8px 5px;
+      border-radius:5px;
+      font-size:17px;
+      font-family: 'VagLight', sans-serif !important;
+    }
+    .questionBar input {
+      transform: scale(1.5);
+      margin:0px 5px;
+    }
+
+    /* .panel {
+      position:absolute;
+      top:165px;
+      left:0px;
+    } */
+
+    ion-card {
+        padding-bottom:30px !important;
+    }
+
+
+    /* The top header area with the dots. */
+
+    .topWrap {
+  	  display:block;
+  	  width:100% !important;
+  	  height:325px !important;
+  	  z-index:-1 !important;
+      border:0px solid white;
+    }
+
+    .topCircleBar {
+  	  position:absolute;
+  	  top:250px !important;
+  	  border:0px solid white;
+  	  width:100% !important;
+    }
+
+    .mainLineBehindCircles {
+  	  position:absolute;
+  	  margin: 0px !important;
+  	  padding: 0px !important;
+  	  border: 0px solid #6cb4dc;
+  	  background-color: white;
+  	  height: 60px;
+  	  width: 100% !important;
+    }
+
+    .lineBelowMainLine {
+  	  position:absolute;
+  	  top:50px;
+  	  margin: 0px !important;
+  	  padding: 0px !important;
+  	  border: 0px solid #6cb4dc;
+  	  background-color:#ebedf2;
+  	  height: 500px;
+  	  width: 100% !important;
+    }
+
+    .mainCircle {
+  	   position:relative;
+    	top:-25px;
+    	left:calc(50vw - 50px) !important;
+    	border-radius:50px;
+    	height:100px; /* total 100 */
+    	width:100px; /* total 100 */
+    	padding:20px 0px 0px 3px;
+    	background-color:#4c75d6;
+    	color:white !important;
+    	text-align:center;
+    	border:2px solid white !important;
+  	  font-size:18px !important;
+  	  line-height:20px !important;
+  	  margin:0px !important;
+  	  font-family: 'gotham' !important;
+  	  font-weight: bold !important;
+    }
+
+    .mainCircleSmallText {
+  	  border:0px solid red;color:white;
+  	  margin-top:0px !important;
+  	  padding:0px !important;
+  	  font-size:13px;
+    }
+
+    .mainCircleUnderNumber {
+  	  border:0px solid red;color:white;
+  	  margin-top:8px !important;
+  	  padding:0px !important;
+  	  font-size:28px;
+    }
+
+    .home_circle {	/* this is the base class for circle 2, 3, 4 ... */
+    	position:absolute;
+    	top:2px;
+    	border:1px solid white;
+      background-color: #ebebeb; /* #4c75d6; */
+      border-radius:50px;
+      height:45px;
+      width:45px;
+      color:#333333 !important;
+      padding:10px 2px 0px 4px;
+    	text-align:center;
+    	font-size:12px !important;
+    }
+
+    .star_circle {
+    	position:absolute;
+    	top:-6px;
+    	border:0px solid white;
+      border-radius:50px;
+      height:60px;
+      width:60px;
+      color:#333333 !important;
+      padding:20px 2px 0px 4px;
+    	text-align:center;
+    	font-size:12px !important;
+      background-image:url("../img/starIcon_230.png");
+      background-size:100%;
+      margin-left:-8px !important;
+    }
+
+    .circleLeft1  { left:calc(50vw - 45px - 125px); }
+    .circleLeft2  { left:calc(50vw - 45px - 65px); }
+    .circle2      { left:calc(50vw + 45px + 20px);  } /* half width of main circle plus 25 spacer */
+    .circle3      { left:calc(50vw + 45px + 80px); } /* last one + 25 spacer + 50 (=75) */
+    .circle4      { left:calc(50vw + 45px + 175px); }
+    .circle5      { left:calc(50vw + 45px + 250px); }
+
+    .home_circle div {
+    	color:#333333;
+    	font-size:12px;
+    	line-height:12px !important;
+    	padding-top:4px;
+    	font-family: 'gotham' !important;
+    }
+
+    .home_circle_weeknum {
+      margin:-2px 0px 0px 0px !important;
+      font-size:15px !important;
+      font-weight:bold !important;
+      color:#333333;
+    }
+
+    .topBkgImage {
+      position:absolute;
+      background-image:url("../img/article_images/mig_week_1_bkg_480.png");
+      /* background-size:480px;
+      background-repeat: no-repeat;
+      background-attachment: scroll; */
+      background-size:140%;
+      background-color: transparent;
+    }
+
+    .topBkgImageMigraineWeek1 {
+        background-image:url("../img/article_images/mig_week_1_bkg_480.png");
+        width:100%;
+        height:100%;
+        border:0px solid red !important;
+    }
+
+    @media (min-width: 480px) {
+
+        .topBkgImageMigraineWeek1 {
+        background-image:url("../img/article_images/mig_week_1_bkg_1024.jpg") !important; }
+
+        .topBkgImage { background-size:100%;  }
+    }
+
+}

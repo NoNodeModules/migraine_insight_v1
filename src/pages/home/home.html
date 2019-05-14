@@ -1,0 +1,450 @@
+<!-- <ion-header>
+  <ion-navbar hideBackButton="true">
+      <ion-title style="">Home</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content fullscreen no-bounce has-bouncing="false" style="background-color:#ebedf2 !important;">
+
+    <!-- TOP PART -->
+    <div class="topWrap">
+
+    <!-- IMAGE -->
+    <div style="object-fit:scale-down;" class="topBkgImage topBkgImageMigraineWeek1"></div>
+
+    <!-- LOGO IMAGE -->
+    <img src="img/article_images/logoLong.png" style="position:absolute;top:50px;left:20px;width:220px !important;" />
+
+    <div style="position:absolute;top:80px;left:20px;width:200px !important;border:0px solid red;color:white;font-size:15px;line-height:17px;font-weight: normal;font-family: gotham;">
+    Did you know?<br/><span style="font-weight:normal;">You do not have to be diagnosed with migraines for our tracker to work. If you get regular headaches of any kind, you're in the right place!</span>
+    </div>
+
+    <!-- Your progress button -->
+    <div style="position: absolute !important;top: 195px;left:20px;background-color:#7ccc9e;height:40px;width:100px;color:white !important;z-index:10;border-radius:15px;text-align: center;padding: 13px 0px 0px 0px;font-size: 13px;" (click)="showProgress();">Your Progress</div>
+
+    <!-- LINES and CIRCLES Week 1 -->
+    <div [ngClass]="{'hideMe' : panelWeek1_showMe == false}">
+      <div class="topCircleBar">
+          <div class="mainLineBehindCircles">
+              <div class="lineBelowMainLine">
+              </div>
+              <div class="mainCircle" (click)="showPanel('panelWeek1');">
+               Getting Started
+               <div class="mainCircleSmallText">Week 1</div>
+               </div>
+              <!-- circle 2 to 5 -->
+              <div class="home_circle circle2" (click)="showPanel('panelWeek2');">Week<br/><div class="home_circle_weeknum">2</div></div>
+              <div class="home_circle circle3" (click)="showPanel('panelWeek3');">Week<br/><div class="home_circle_weeknum">3</div></div>
+              <div class="home_circle circle4" (click)="showPanel('panelWeek4');">Week<br/><div class="home_circle_weeknum">4</div></div>
+              <div class="home_circle circle5" (click)="showPanel('panelWeek5');">
+                   <div style="font-size:24px !important;">...</div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- LINES and CIRCLES Week 2 -->
+    <div [ngClass]="{'hideMe' : panelWeek2_showMe == false}">
+      <div class="topCircleBar">
+          <div class="mainLineBehindCircles">
+          <div class="lineBelowMainLine"></div>
+              <div class="home_circle circleLeft2" (click)="showPanel('panelWeek1');">Week<br/><div class="home_circle_weeknum">1</div></div>
+              <div class="mainCircle" (click)="showPanel('panelWeek2');">Week<br/><div class="mainCircleUnderNumber">2</div></div>
+              <div class="home_circle circle2" (click)="showPanel('panelWeek3');">Week<br/><div class="home_circle_weeknum">3</div></div>
+              <div class="home_circle circle3" (click)="showPanel('panelWeek4');">Week<br/><div class="home_circle_weeknum">4</div></div>
+          </div>
+    </div>
+    </div>
+
+    <!-- LINES and CIRCLES Week 3 -->
+    <div [ngClass]="{'hideMe' : panelWeek3_showMe == false}">
+      <div class="topCircleBar">
+          <div class="mainLineBehindCircles">
+          <div class="lineBelowMainLine"></div>
+              <div class="home_circle circleLeft1" (click)="showPanel('panelWeek1');">Week<br/><div class="home_circle_weeknum">1</div></div>
+              <div class="home_circle circleLeft2" (click)="showPanel('panelWeek2');">Week<br/><div class="home_circle_weeknum">2</div></div>
+              <div class="mainCircle" (click)="showPanel('panelWeek3');">Week<br/><div class="mainCircleUnderNumber">3</div></div>
+              <div class="star_circle circle2" (click)="showPanel('panelWeek4');">Week<br/><div class="home_circle_weeknum">4</div></div>
+              <div class="home_circle circle3" (click)="showPanel('panelWeek5');">Week<br/><div class="home_circle_weeknum">5</div></div>
+          </div>
+        </div>
+    </div>
+
+    <!-- LINES and CIRCLES Week 4 -->
+    <div [ngClass]="{'hideMe' : panelWeek4_showMe == false}">
+      <div class="topCircleBar">
+          <div class="mainLineBehindCircles">
+          <div class="lineBelowMainLine"></div>
+              <div class="home_circle circleLeft1" (click)="showPanel('panelWeek1');">Week<br/><div class="home_circle_weeknum">2</div></div>
+              <div class="home_circle circleLeft2" (click)="showPanel('panelWeek2');">Week<br/><div class="home_circle_weeknum">3</div></div>
+              <div class="mainCircle" (click)="showPanel('panelWeek3');">Week<br/><div class="mainCircleUnderNumber">4</div></div>
+              <div class="home_circle circle2" (click)="showPanel('panelWeek4');">Week<br/><div class="home_circle_weeknum">5</div></div>
+              <!-- <div class="home_circle circle3" (click)="showPanel('panelWeek5');">Week<br/><div class="home_circle_weeknum">5</div></div> -->
+          </div>
+        </div>
+    </div>
+  </div>
+
+<!-- PANEL WEEK 1 -->
+<div [ngClass]="{'hideMe' : panelWeek1_showMe == false}">
+  <ion-list style="background-color:#ebedf2 !important;margin:8px !important;">
+      <ion-item *ngFor="let post of posts" style="height:100%;margin: 10px 0px; background-color:white;border: 1px solid #bbbbbb;padding:0px !important;" (tap)="pick(post, post.title[0].value);">
+        <div style="font-size:16px !important;color:#333333;white-space:normal;line-height:18px;padding:10px;">
+          {{ post.title[0].value }}
+          <br/>
+          <!-- <div [innerHTML]="post.body[0].value" style="display:none;text-overflow: ellipsis;"></div>
+          <div [innerHTML]="post.body[0].value | slice : 0 : 70" style="font-size:14px !important;color:#333333;font-weight: normal;font-family: gotham;display:inline;"></div> ...-->
+          <!-- <a href="" style="font-size:14px !important;color:#333333;font-weight: normal;font-family: gotham;display:inline;">continue reading</a> -->
+        </div>
+        <img [src]="post.field_image[0].url" style="width:100% !important;" />
+      </ion-item>
+    </ion-list>
+</div>
+
+<!-- PANEL WEEK 2 -->
+<div [ngClass]="{'hideMe' : panelWeek2_showMe == false}">
+  <ion-list style="background-color:#ebedf2 !important;margin:8px !important;">
+      <ion-item *ngFor="let post of posts2" style="height:100%;margin: 10px 0px; background-color:white;border: 1px solid #bbbbbb;padding:0px !important;" (tap)="pick(post, post.title[0].value);">
+        <div style="font-size:16px !important;color:#333333;white-space:normal;line-height:18px;padding:10px;">
+          {{ post.title[0].value }}
+          <br/>
+        </div>
+        <img [src]="post.field_image[0].url" style="width:100% !important;margin: 0px !important;padding: 0px !important;" />
+      </ion-item>
+    </ion-list>
+</div>
+
+<!-- PANEL WEEK 3 -->
+<div [ngClass]="{'hideMe' : panelWeek3_showMe == false}">
+  <ion-list style="background-color:#ebedf2 !important;margin:8px !important;">
+      <ion-item *ngFor="let post of posts3" style="height:100%;margin: 10px 0px; background-color:white;border: 1px solid #bbbbbb;padding:0px !important;" (tap)="pick(post, post.title[0].value);">
+        <div style="font-size:16px !important;color:#333333;white-space:normal;line-height:18px;padding:10px;">
+          {{ post.title[0].value }}
+          <br/>
+        </div>
+        <img [src]="post.field_image[0].url" style="width:100% !important;" />
+      </ion-item>
+    </ion-list>
+</div>
+
+<!-- PANEL WEEK 4 -->
+<div [ngClass]="{'hideMe' : panelWeek4_showMe == false}">
+  <ion-list style="background-color:#ebedf2 !important;margin:8px !important;">
+      <ion-item *ngFor="let post of posts4" style="height:100%;margin: 10px 0px; background-color:white;border: 1px solid #bbbbbb;padding:0px !important;" (tap)="pick(post, post.title[0].value);">
+        <div style="font-size:16px !important;color:#333333;white-space:normal;line-height:18px;padding:10px;">
+          {{ post.title[0].value }}
+          <br/>
+        </div>
+        <img [src]="post.field_image[0].url" style="width:100% !important;" />
+      </ion-item>
+    </ion-list>
+</div>
+
+<!-- PANEL WEEK 5 -->
+<div [ngClass]="{'hideMe' : panelWeek4_showMe == false}">
+  <ion-list style="background-color:#ebedf2 !important;margin:8px !important;">
+      <ion-item *ngFor="let post of posts5" style="height:100%;margin: 10px 0px; background-color:white;border: 1px solid #bbbbbb;padding:0px !important;" (tap)="pick(post, post.title[0].value);">
+        <div style="font-size:16px !important;color:#333333;white-space:normal;line-height:18px;padding:10px;">
+          {{ post.title[0].value }}
+          <br/>
+        </div>
+        <img [src]="post.field_image[0].url" style="width:100% !important;" />
+      </ion-item>
+    </ion-list>
+</div>
+
+</ion-content>
+
+
+<!-- view : overlay stats -- REMOVE THIS LATER! todo -->
+<div id="oStats" class="oLay scrollMe" [ngClass]="{'hideMe' : oStatshide}" (click)="oStatshide = true;" style="padding-bottom:10px !important;">
+  <div class="popUpWrap" (click)="$event.stopPropagation();" style="padding-bottom:10px !important;">
+  <div class="popUpShort" style="margin-bottom:30px !important;padding-bottom:20px !important;padding:30px 18px 40px 18px">
+
+        <div class="popUpContent">
+            <div style="font-size:20px;margin-bottom:5px;color:white;">Your Progress</div>
+
+            <div class="statsWrap" [ngClass]="{'hideMe' : timeBetweenMigrainesNA == true}">
+                <div class="statsInner1" style="padding:5px 0px 0px 3px !important;line-height: 14px !important;">
+                    <span style="font-size:24px;line-height:20px !important;">{{avgTimeBetweenMigraines_Days}}</span><br/>
+                    <span style="font-size:13px;">Days<br/>
+                    {{avgTimeBetweenMigraines_Hours}} hours</span>
+                </div>
+                <div class="statsInner2">Average time between migraines</div>
+            </div>
+
+            <div class="statsWrap" [ngClass]="{'hideMe' : timeBetweenMigrainesNA != true}">
+                <div class="statsInner1" style="padding:4px 0px 0px 2px !important;font-size:14px;line-height:14px;">Not<br/>enough<br/>data</div>
+                <div class="statsInner2">Average time<br/>between migraines</div>
+            </div>
+
+            <div class="statsWrap">
+                <div class="statsInner1" style="font-size:26px;line-height:46px;">{{mostRecentMigraine_dayssince}}</div>
+                <div class="statsInner2">Days since last migraine</div>
+            </div>
+
+            <div class="statsWrap">
+                <div class="statsInner1" style="font-size:18px;line-height:46px;">{{dayOfWeekMostMigraines}}</div>
+                <div class="statsInner2">Day of week with most migraines</div>
+            </div>
+
+
+            <div class="statsWrap" [ngClass]="{'hideMe' : trackingPeriod == false}">
+                <div class="statsInner1" style="font-size:26px;line-height:46px;">{{mostRecentPeriod_days}}</div>
+                <div class="statsInner2">Current day of menstrual cycle</div>
+            </div>
+
+            <div class="statsWrap">
+                <div class="statsInner1" style="font-size:26px;line-height:46px;">{{daysLogged}}</div>
+                <div class="statsInner2">Days logged</div>
+            </div>
+
+            <div style="font-size:14px;padding-top:28px;color:white;">* Average time between migraines is the average time over the last two months.</div>
+
+        </div>
+
+  </div>
+  <button class="btn_closeMe" (click)="oStatshide = true;">X</button>
+  </div>
+</div>
+
+
+<!--
+<ion-list>
+      <ion-item *ngFor="let post of posts">
+        <img src="{{ post.image }}" />
+        <a href="{{ post.field_url }}">{{ post.title[0].value }}</a>
+        <a href="{{ post.field_url }}">{{ post.title[0].value }}</a>
+        <img [src]="post.field_image[0].url" />
+      </ion-item>
+    </ion-list>
+  -->
+    <!--
+    <ion-list>
+        <ion-item *ngFor="let post of posts">
+          <img [src]="post.image" />
+          <a href="">post.title</a>
+        </ion-item>
+      </ion-list>
+    -->
+
+  <!-- WEEK 1 -->
+  <!-- <ion-card *ngFor="let card of cards">
+  <div style="position:relative;background-color:#ebedf2;height:100% !important;">
+    <iframe width="100%" height="100%" frameborder="0" src="https://healy.io/starbase/migraineweek1"></iframe>
+  </div> -->
+
+  <!-- <img src="img/article_images/mig_week_1_top.png" style="position:relative;" /> background-image:url('img/article_images/mig_week_1_top.png');
+  background-size:100%; margin: 0px auto 0px auto !important; width:100% !important; padding: 0px; height:600px; -->
+
+  <!-- TOP PART  -- YOU PUT THIS IN DRUPAL IN THE HEADER OF THE VIEW
+  <div style="position:relative;display:block;">
+      <img src="img/article_images/mig_week_1_top.png" style="position:relative;width:100%;
+      margin:0px !important;padding:0px !important;" />
+      <div style="position:relative;border:1px solid white;margin:-5px;">
+            <div style="position:absolute;margin:0px !important;padding:0px !important;border:0px solid #6cb4dc;background-color:white;height:40px;width:100%;">
+            </div>
+            <div class="home_circle" style="position:absolute;top:-20px;left:30px;background-color:
+            #333333;border-radius:50px;height:80px;width:80px;color:white !important;padding:11px 0px 0px 3px;
+            text-align:center;border-size:2px solid white !important;" (click)="showPanel('panelWeek1');">
+                <div style="padding:7px 0px 0px 0px !important;font:17px VagBold, bold !important;line-height:20px !important;margin:0px !important;color:white;">
+                  Getting Started
+                  <div style="border:0px solid red;color:white;margin-top:-1px !important;
+                  padding:0px !important;font-size:10px;">
+                      Week 1
+                  </div>
+                </div>
+              </div>
+            <div class="home_circle" style="left:120px;" (click)="showPanel('panelWeek2');">
+              <div>Week<br/>2</div>
+            </div>
+            <div class="home_circle" style="left:170px;" (click)="showPanel('panelWeek3');">
+              <div>Week<br/>3</div>
+            </div>
+            <div class="home_circle" style="left:220px;" (click)="showPanel('panelWeek4');">
+              <div>Week<br/>4</div>
+            </div>
+            <div class="home_circle" style="left:270px;padding:3px;" (click)="showPanel('panelWeek5');">
+              <div style="font-size:24px !important;">...</div>
+            </div>
+      </div>
+  </div> -->
+
+      <!--
+    <ion-card class="panel" [ngClass]="{'hideMe' : panelWeek1_showMe == false}">
+
+      <ion-card-content>
+        <span (click)="switchTab(2);" target="_parent">Click Me</span>
+              <div class="mm_card2">
+              		<div class="mm_card2InsideText">
+              		Did you know? You do not have to be diagnosed with migraines for our tracker to work. If you get regular headaches of any kind, you're in the right place!
+                </div>
+              </div>
+      </ion-card-content>
+
+      <ion-card-content class="articleCard" (click)="goArticle('article1_1')">
+          What type of headache is it?
+          <span style="font-size:10px;display:block;margin-bottom:8px;">EDITORIAL ARTICLE</span>
+          <img src="img/article_images/article1_1.jpg" />
+      </ion-card-content>
+
+      <ion-card-content class="quizCard" style="position:relative;min-height:510px;padding:0px;">
+
+        <!-- ANSWER --
+        <div class="resultsCard" style="height:150px;margin:0px;">
+              <div style="position:absolute; top:0px;left:0px;width:100%;height:510px !important;padding:10px;background-color:#eeeeee;color:black;">
+                <!-- *** Q4 *** --
+              	<div class="surveyQuestionText">Which types of headaches do you get?</div>
+                <div class="questionBar">Migraine
+                </div>
+              	<div class="questionBar">Tension Headaches
+              	</div>
+              	<div class="questionBar">Cluster Headaches
+                </div>
+                <div class="questionBar">Hemiplegic Migraines
+              	</div>
+              	<div class="questionBar">Basilar Migraines
+              	</div>
+                <div class="questionBar">Abdominal Migraines
+              	</div>
+              	<div class="questionBar">Ophthalmic Migraines
+              	</div>
+                <div (click)="showQuestions('q1_1');" class="questionBar" style="text-align:center;">Change Answer</div>
+              </div>
+
+        </div>
+
+        <!-- QUESTION 1_1 --
+        <div [ngClass]="{'hideMe' : q1_1_showMe == false}" style="position:absolute; top:0px;left; 0px;width:100%;height:510px !important;padding:10px;background-color:#eeeeee;color:black;">
+          <!-- *** Q4 *** --
+        	<div class="surveyQuestionText">Which types of headaches do you get?</div>
+
+          <!-- fix later - add touch on bar to turn on answer. or, do like setup screens with bar that just turns on. no checkbox. <div class="questionBar" (click)="window.document.getElementById('q1_1_1').checked = 'checked'"><input id="q1_1_1" type="checkbox" ng-model="data.diagnosed_migraines" id="diagnosed_migraines">Migraine
+          </div> --
+
+          <div class="questionBar"><input type="checkbox" [(ngModel)]="q1_1migraines">Migraine
+          </div>
+        	<div class="questionBar"><input type="checkbox" [(ngModel)]="q1_1TTH">Tension Headaches
+        	</div>
+        	<div class="questionBar"><input type="checkbox" [(ngModel)]="q1_1clusterHeadaches">Cluster Headaches
+          </div>
+          <div class="questionBar"><input type="checkbox" [(ngModel)]="q1_1hemiplegicMigraines">Hemiplegic Migraines
+        	</div>
+        	<div class="questionBar"><input type="checkbox" [(ngModel)]="q1_1basilarMigraines">Basilar Migraines
+        	</div>
+          <div class="questionBar"><input type="checkbox" [(ngModel)]="q1_1abdominalMigraines">Abdominal Migraines
+        	</div>
+        	<div class="questionBar"><input type="checkbox" [(ngModel)]="q1_1ophthalmicMigraines">Ophthalmic Migraines
+        	</div>
+          <div (click)="saveQ1Answers();" class="questionBar" style="text-align:center;">Submit Answer</div>
+        </div>
+      </ion-card-content>
+
+      <ion-card-content class="articleCard">
+          What's a migraine aura?
+          <span style="font-size:10px;display:block;margin-bottom:8px;">EDITORIAL ARTICLE</span>
+          <img src="img/article_images/article1_2.gif" />
+      </ion-card-content>
+
+      <ion-card-content class="quizCard" style="position:relative;min-height:220px;padding:0px;">
+
+        <!-- ANSWER --
+        <div class="resultsCard">
+            <div class="resultsCardText">This is the results.</div>
+              <br/>
+              <div class="questionBar" (click)="showQuestions('q1_2');">Change Answer</div>
+        </div>
+
+        <!-- *** Q1 *** --
+          <div [ngClass]="{'hideMe' : q1_2_showMe == false}" class="quizQuestionCard">
+              <div class="surveyQuestionText">Do you get migraine auras?</div>
+              <div>
+                <div (click)="selectAuras(1);" class="questionBar">Never</div>
+                <div (click)="selectAuras(2);" class="questionBar">Sometimes</div>
+                <div (click)="selectAuras(3);" class="questionBar">Always</div>
+              </div>
+          </div>
+      </ion-card-content>
+
+      <div style="width:100%;padding:20px !important;text-align:right;color:#333333;">Week 2 --</div>
+    </ion-card>
+
+
+
+
+<!-- // *** WEEK 2  *** --
+
+<ion-card class="panel" [ngClass]="{'hideMe' : panelWeek2_showMe == false}">
+
+  <ion-card-content class="articleCard" (click)="goArticle('article1_1')">
+      PANEL 2
+      <span style="font-size:10px;display:block;margin-bottom:8px;">EDITORIAL ARTICLE</span>
+      <img src="img/article_images/article1_1.jpg" />
+  </ion-card-content>
+
+  <ion-card-content class="articleCard">
+      What type of headache is it 2?
+      <span style="font-size:10px;display:block;margin-bottom:8px;">EDITORIAL ARTICLE</span>
+      <img src="img/article_images/article1_1.jpg" />
+  </ion-card-content>
+
+  <ion-card-content class="quizCard" style="position:relative;min-height:300px;padding:0px;">
+
+    <!-- ANSWER --
+    <div style="position:absolute; top:0px; left; 0px;width:100%;height:150px;background-color:aqua;">
+        <div style="padding:10px;">This is the results.
+          <br/>
+          <div (click)="showQuestions();">Change Answer</div>
+        </div>
+    </div>
+
+    <!-- QUESTION Q1_2 --
+    <div [ngClass]="{'hideMe' : q1_2_showMe == false}" style="position:absolute; top:0px; left; 0px;width:100%;height:150px;padding:10px;background-color:#eeeeee;color:black;" >
+
+      <!-- *** Q1 *** --
+      <div class="surveyQuestionText">Do your migraines come with auras?</div>
+      <div>
+        <div (click)="selectAuras(1);" class="questionBar">Never</div>
+        <div (click)="selectAuras(2);" class="questionBar">Sometimes</div>
+        <div (click)="selectAuras(3);" class="questionBar">Always</div>
+      </div>
+    </div>
+
+  </ion-card-content>
+
+  <ion-card-content class="articleCard">
+      What's a migraine aura?
+      <span style="font-size:10px;display:block;margin-bottom:8px;">EDITORIAL ARTICLE</span>
+      <img src="img/article_images/article1_1.jpg" />
+  </ion-card-content>
+</ion-card>
+
+
+<!-- // *** WEEK 3  *** --
+<ion-card class="panel" [ngClass]="{'hideMe' : panelWeek3_showMe == false}">
+
+  <ion-card-content class="articleCard" (click)="goArticle('article1_1')">
+      PANEL 3
+      <span style="font-size:10px;display:block;margin-bottom:8px;">EDITORIAL ARTICLE</span>
+      <img src="img/article_images/article1_1.jpg" />
+  </ion-card-content>
+</ion-card>
+
+<!-- // *** WEEK 4  *** --
+<ion-card class="panel" [ngClass]="{'hideMe' : panelWeek4_showMe == false}">
+
+  <ion-card-content class="articleCard" (click)="goArticle('article1_1')">
+      PANEL 4
+      <span style="font-size:10px;display:block;margin-bottom:8px;">EDITORIAL ARTICLE</span>
+      <img src="img/article_images/article1_1.jpg" />
+  </ion-card-content>
+</ion-card>
+
+<!-- // *** WEEK 5  *** --
+<ion-card class="panel" [ngClass]="{'hideMe' : panelWeek5_showMe == false}">
+
+  <ion-card-content class="articleCard" (click)="goArticle('article1_1')">
+    See you in week 5!<br/>
+      After week 4, all your content will be customized to your preferences.
+  </ion-card-content>
+</ion-card> -->

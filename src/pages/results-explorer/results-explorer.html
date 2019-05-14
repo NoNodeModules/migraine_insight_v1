@@ -1,0 +1,78 @@
+<ion-header>
+<ion-navbar>
+    <ion-title class="toolbar-title-with-right-btn">{{myName}}</ion-title>
+    <ion-buttons end>
+        <button class="button-icon addBtn" icon-only (click)="oAddHide = false;">
+          <i class="fa fa-rocket" style="margin:-1px 0px 0px 18px;font-size:22px;"
+              aria-hidden="true"></i>
+        </button>
+    </ion-buttons>
+</ion-navbar>
+</ion-header>
+
+
+<ion-content class="mm_content no-scroll" style="background-color:#bff2f9;" id="results">
+    <!-- <div id="canvasWrap" style="margin-top:0px;"></div> -->
+    <canvas id="myCanvas" #myCanvas style="margin:0px !important;background-color:#bff2f9;">
+      Canvas not supported</canvas>
+	<br/><br/>
+</ion-content>
+
+<!-- view : OVERLAY -->
+<div id="oAdd" style="margin-top:20px;" class="oLay scrollMe" [ngClass]="{'hideMe' : oAddHide}" (click)="processAddOverlay();">
+	<div class="popUpWrap"  (click)="$event.stopPropagation();">
+	<div class="popUpShort" style="padding-top: 25px;">
+
+	  <div class="popUpContent center">
+      <i class="fa fa-rocket" style="margin:0px 8px 10px 0px;font-size:32px;"
+        aria-hidden="true"></i> <span style="font-size:20px !important;">
+              Timeline Explorer
+            </span> <!-- lynn fix add back in todo | alphabetizeIt -->
+
+            <ion-item class="whiteOnRedSelect" style="color:#6cb4dc !important;margin:20px auto !important;" >
+            <ion-select id="t1" [(ngModel)]="t1" (ngModelChange)="onSelectChangeOne();" placeholder="Pick Trigger One" style="max-width:100% !important;width:100%;">
+                <ion-option *ngFor="let trig of trackers" [value]="trig.name">{{trig.name}}</ion-option>
+            </ion-select>
+            </ion-item>
+
+            <ion-item class="whiteOnRedSelect" style="color:#6cb4dc !important;margin:20px auto !important;" >
+            <ion-select id="2UP" #2UP [(ngModel)]="my2UP" (ngModelChange)="onSelectChangeTwo();" placeholder="Pick Trigger Two"  style="max-width:100% !important;width:100%;">
+                <ion-option [value]="none">None</ion-option>
+                <ion-option *ngFor="let trig of trackers" [value]="trig.name">{{trig.name}}</ion-option>
+            </ion-select>
+            </ion-item>
+            <!-- (second trigger optional) -->
+
+            <div class="deleteBtnWrapInline" style="margin-top:25px;">
+              <button (click)="processAddOverlay();" class="goBtn">Go</button>
+            </div>
+
+        <div style="position:relative;height:50px !important;margin-top:40px;">
+            <ion-checkbox id="ss" style="position:absolute; top:10px; left:41px;border:0px solid red
+              !important;margin-left:0px !important;" [(ngModel)]="showSymptoms" [ngModelOptions]="{standalone: true}" >
+            </ion-checkbox>
+
+            <div style="position:absolute; background-color:transparent !important; top:10px; left:70px
+            !important;width:230px !important;z-index:2;font-size:12px;color:#a5ccd5;padding:0px !important;color:white;font-size:18px;text-align:left;">
+            Show Symptoms</div>
+
+            <ion-checkbox id="st" style="position:absolute; top:48px; left:41px;border:0px solid red
+              !important;margin-left:0px !important;" [(ngModel)]="showTreatments" [ngModelOptions]="{standalone: true}" >
+            </ion-checkbox>
+
+            <div style="position:absolute; background-color:transparent !important; top:49px; left:70px
+            !important;width:230px !important;z-index:2;font-size:12px;color:#a5ccd5;padding:0px !important;color:white;font-size:18px;text-align:left;margin-bottom:30px !important;">
+            Show Treatments</div>
+            <br/>
+
+        </div>
+
+            <!-- ORIG <ion-toggle ng-change="toggleSymptoms();" ng-model="showSymptoms" style="font-size: 18px !important;padding:5px 0px 0px 20px !important;">Show Symptoms</ion-toggle>
+            <ion-toggle ng-change="toggleTreatments();" ng-model="showTreatments" style="font-size: 18px !important;padding:5px 0px 0px 20px !important;">Show Treatments</ion-toggle> -->
+	  </div>
+
+	</div>
+	<button class="btn_closeMe" style="left: 76% !important;" (click)="processAddOverlay();">X</button>
+	</div>
+
+</div>

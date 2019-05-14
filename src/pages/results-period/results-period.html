@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="toolbar-title-with-right-btn">{{myName}}</ion-title>
+    <ion-buttons end>
+      <!--  <button class="button-icon addBtn" icon-only (click)="goToExplorer();">
+            Timeline
+        </button> -->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="mm_content" style="padding:0px !important;">
+
+
+  <!-- Days Message -->
+  <div class="mediumText" style="width: auto !important; border: 0px solid red; margin: 20px 30px 0px 30px !important; font-size: 20px; line-height: 110%;">{{periodResultsMessage}}</div>
+
+  <!-- <div class="mediumText" style="width: auto !important; border: 0px solid red; margin: 20px 20px 10px 20px !important; font-size: 20px; line-height: 110%;">How often do periods<br/>affect my migraines?</div> -->
+
+  <!-- METER -->
+  <div style="position:relative;top:20px;margin:auto;width:140px;height:145px;">
+      <img id="mainImgDetail_Period" src="img/meter/meter_0.png" width="140" style="position:absolute;top:0px;left:0px;z-index:4;"/>
+      <div style="position: absolute;top:55px;left:40px; color:white;font-size:26px;z-index:5;width:61px; text-align:center;">{{(myScore | number:0)*1}}</div>
+   </div>
+  <!-- METER END -->
+
+
+  <div style="min-height:200px;color: #6cb4dc;background-color:#bff2f9;margin-bottom:0px !important;padding:20px 0px 50px 0px;font-size:18px;">
+      <div style="margin-bottom:12px;text-align: center;">Your Periods</div><!-- {{timesTracked}} {{myName}} Events -->
+      <div style="background-color:#bff2f9;">
+          <hr class="mm_hr_blue" style="margin:0px 20px !important;">
+      </div>
+
+        <!-- Periods and Migraines -->
+          <div *ngFor="let item of events;let i = index;">
+              <div style="border:0px solid green;font-size:16px; color:#6cb4dc; margin:20px 0px 0px 30px !important;"
+               [ngClass]="{'hideMe' : item.name != 'Period'}">Period on {{item.myDateTime | date: 'MM/dd/yy'}}
+               <span [ngClass]="{'hideMe' : item.periodCycleDay == 0}" style="font-size:12px;">(Days in last cycle: {{item.periodCycleDay}})</span>
+             </div>
+
+             <div style="border:0px solid red;font-size:14px; color:#ee4951; margin:5px 0px 0px 40px !important;"
+               [ngClass]="{'hideMe' : item.name != 'Migraine'}">Migraine on {{item.myDateTime | date: 'MM/dd/yy'}}, Day: {{item.periodCycleDay}}
+             </div>
+          </div>
+
+          <!-- Period Length Message -->
+              <hr class="mm_hr_blue" style="margin:20px 20px 0px 20px !important;">
+          <div class="mediumText" style="font-size:16px;line-height:20px !important;width:260px;margin: 15px 25px 10px 25px !important;">{{periodLengthMessage}}</div>
+
+  </div>
+
+
+</ion-content>

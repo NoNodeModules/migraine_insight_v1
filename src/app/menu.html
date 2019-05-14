@@ -1,0 +1,31 @@
+<ion-menu [content]="content" class="no-scroll" [swipeEnabled]="false" has-bouncing="false">
+
+<ion-content style="background-color:white;position:relative;" class="no-scroll" no-bounce has-bouncing="false">
+
+<div style="margin-top:65px;" >
+    <button class="menuIcon menuIcon1" menuClose tappable (tap)="navToPage(YourLogLink)">Your Log</button>
+    <button class="menuIcon menuIcon2" nav-clear menuClose tappable (tap)="navToPage(TrackersLink)">What You're Tracking</button>
+    <button class="menuIcon menuIcon3" style="border-bottom:1px solid #ccc;" menuClose tappable (tap)="navToPage(ResultsMainLink)">Your Results</button>
+
+
+    <button class="smallMenu" style="margin-top:25px;" menuClose tappable (tap)="navToPage(HowItWorksLink)">How it Works</button>
+    <button class="smallMenu" menuClose tappable (tap)="navToPage(CalendarLink)">Migraine Calendar</button>
+    <button class="smallMenu" menuClose [ngClass]="{'hideMe': onWeb}" tappable (tap)="navToPage(PrintReportLink)">Email and Print Report</button>
+    <button class="smallMenu" menuClose tappable (tap)="navToPage(AccountLink)">Account</button>
+
+    <div class="wideWrap" style="width:183px;margin:55px auto 20px auto !important;">
+        <button class="wideButton redBack center" menuClose tappable (tap)="navToMigraine()"
+        style="height:43px !important;border-radius:14px !important;font-size:16px !important;">
+          Report a Migraine
+        </button>
+    </div>
+</div>
+
+<div style="background-color:#6cb4dc;height:64px;position:absolute;left:0px;top:0px;width:100%;">top</div>
+
+</ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content tappable swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,176 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="toolbar-title-with-right-btn">{{myName}}</ion-title>
+    <ion-buttons end>
+      <!--  <button class="button-icon addBtn" icon-only (click)="goToExplorer();">
+            Timeline
+        </button> -->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="mm_content">
+
+    <!-- Score explain -->
+    <div class="mediumText hideMe howOften" [ngClass]="{showMe : myScore < 25}">You RARELY OR NEVER get migraines after
+      {{myNameLowerCase}}.</div>
+    <div class="mediumText hideMe howOften" [ngClass]="{showMe : myScore >= 25 && myScore < 50}">You SOMETIMES get migraines
+      after {{myNameLowerCase}}.</div>
+    <div class="mediumText hideMe howOften" [ngClass]="{showMe : myScore >= 50 && myScore < 75}">You OFTEN get migraines
+      after {{myNameLowerCase}}.</div>
+    <div class="mediumText hideMe howOften" [ngClass]="{showMe : myScore >= 75}">You VERY OFTEN get migraines after
+      {{myNameLowerCase}}.</div>
+
+    <!-- METER -->
+    <div style="position:relative;top:18px;margin:auto;width:140px;">
+
+        <img id="mainImgDetail" src="img/meter/meter_0.png" width="140" style="position:absolute;top:0px;left:0px;z-index:4;"/>
+        <div class="resultsDetailScore">{{(myScore | number:0)*1}}</div>
+        <!-- <i class="fa fa-question-circle-o" style="position:absolute;top: 59px; left: 180px;color:gray;font-size:18px;" aria-hidden="true"></i> -->
+     </div>
+    <!-- METER END -->
+
+    <div style="position:relative;">
+        <!-- <div class="mediumText" style="font-size:18px; margin: 135px 0px 10px 0px !important;">Total Times Logged: {{numTimesMessage}}</div> -->
+        <div class="mediumText" style="background-color:#6cb4dc;border-radius:12px;color:white;font-size:15px; padding-top:8px;margin: 138px auto 10px auto !important;height:28px;width:200px;">Days with Migraine: {{numTimesMigraines}}</div>
+        <div class="mediumText" style="background-color:#6cb4dc;border-radius:12px;color:white;font-size:15px; padding-top:8px;margin: 0px auto 20px auto !important;height:28px;width:200px;">Days with No Migraine: {{arrayOfDayObjects_noMigraine.length}}</div>
+        <!-- <button (click)="scoreExpHide = false;" class="fa fa-question-circle-o detailPositionQuestionCircle" aria-hidden="true"></button> -->
+    </div>
+
+      <!-- CHART -->
+      <div style="position:relative;top:8px;background-color:#bff2f9;height:105px;text-align:center;"> <!-- {{myNameLowerCase}} -->
+          <div style="width:100%;float:center;">
+              <!-- title -->
+              <div class="mediumText" style="position: absolute; top: 0px; left:5px; font-size: 18px; line-height: 22px;">How long before the<br/>migraine starts?</div>
+              <!-- mini chart -->
+              <div id="canvas1" style="position:absolute;top:75px;height:80px !important;background-color:#bff2f9;z-index:0;width:100%;">
+                  <canvas id="canvasDetail" #canvasDetail style="margin:0px !important;background-color:#bff2f9;">
+                    Canvas not supported</canvas>
+              </div>
+
+              <!-- WITH 24 HOURS - hour line of info in minichart
+              <div style="border:0px solid red;width:320px;margin:auto;text-align:center;">
+                  <div style="position:relative;top:68px;width:320px;height:12px;z-index:5;color: #6cb4dc;">
+                      <img id="mainImgDetail" src="img/mm_arrow.png" width="26" style="position:absolute; top:2px; left:88px; z-index:5;"/>
+                      <img id="mainImgDetail" src="img/mm_arrow.png" width="26" style="position:absolute; top:2px; left:245px; z-index:5;"/>
+                      <div style="position:absolute; top:19; left:25px; font-size:12px; height:12px; width:70px; overflow:hidden; text-align:left;">{{myName}}</div>
+                      <div style="position:absolute;top:12px;left:29px;font-size:24px;font-family:VagLight">|</div>
+                      <div style="position:absolute;top:0px;left:128px;font-size:13px;font-family:VagBold">12 HRS AFTER</div>
+                      <div style="position:absolute;top:0px;left:283px;font-size:13px;font-family:VagBold">24</div>
+                  </div>
+              </div> -->
+
+              <!-- WITH 12 HOURS - hour line of info in minichart -->
+              <div style="border:0px solid red;width:320px;margin:auto;text-align:center;">
+                  <div style="position:relative;top:83px;width:320px;height:12px;z-index:5;color: #6cb4dc;">
+                      <img id="mainImgDetail" src="img/mm_arrow.png" width="26" style="position:absolute; top:3px; left:82px; z-index:5;"/>
+                      <img id="mainImgDetail" src="img/mm_arrow.png" width="26" style="position:absolute; top:3px; left:208px; z-index:5;"/>
+                      <div style="position:absolute; top:19; left:25px; font-size:12px; height:13px; width:70px; overflow:hidden; text-align:left;">{{myName}}</div>
+                      <div style="position:absolute;top:12px;left:29px;font-size:24px;font-family:VagLight">|</div>  <!-- line -->
+                      <div style="position:absolute;top:0px;left:138px;font-size:13px;font-family:VagBold">6 Hours</div>
+                      <div style="position:absolute;top:0px;left:245px;font-size:13px;font-family:VagBold">12 Hours</div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <!-- END CHART -->
+
+    <!-- EVENTS LIST -->
+    <div style="color: #6cb4dc;background-color:#bff2f9;padding-bottom:10px !important;margin-top:0px;padding-top:45px;font-size:18px;">
+      <div style="width:300px !important;margin-left:auto;margin-right:auto;">
+        <!-- <div style="margin-bottom:12px;text-align: center;">Migraine Days</div>
+        <div style="background-color:#bff2f9;">
+            <hr class="mm_hr_blue" style="margin:0px 20px !important;">
+        </div> -->
+      <!-- days with migraine -->
+      <div *ngFor="let item of arrayOfDayObjects_withMigraine;let i = index;" style="padding:20px 20px 12px 28px; width:320px; margin:auto !important;">
+            <!-- show the # and the date -->
+            <div style="width:25px;height:25px;background-color:#ee4951;border-radius:20px;color:white;font-size:14px;line-height: 28px;float:left;text-align: center;" [ngClass]="{'hideMe' : item.hasMigraine == 'no'}">{{i+1}}</div>
+            <!-- <div style="border:0px solid red;text-align:left;padding:0px 0px 0px 35px;font-size:14px;color:#ee4951;"  [ngClass]="{'hideMe' : item.hasMigraine == 'no'}">{{item.theDate | date: 'MM/dd'}} - {{myName}}, then Migraine</div>
+            <div style="border:0px solid red;text-align:left;padding:0px 0px 0px 35px;font-size:14px;" [ngClass]="{'hideMe' : item.hasMigraine == 'yes'}">{{item.theDate | date: 'MM/dd'}} - {{myName}}, No Migraine</div> -->
+
+            <div style="border:0px solid red;text-align:left;padding:3px 0px 0px 35px;font-size:16px;"  [ngClass]="{'hideMe' : item.hasMigraine == 'no'}">{{ item.theDisplayDate }}, Migraine Day</div> <!-- {{item.theDate | date: 'MMM dd'}}-->
+            <!-- color:#ee4951;  <div style="border:0px solid red;text-align:left;padding:0px 0px 0px 35px;font-size:14px;" [ngClass]="{'hideMe' : item.hasMigraine == 'yes'}">{{item.theDate | date: 'MM/dd'}} - {{myName}} day, No Migraine</div> -->
+
+            <div *ngFor="let value of item.theEventArray">
+            <!-- the list of events -->
+            <ul class="detailList">
+                <!-- {{value.myDateTime | date: 'MM/dd h:mm a'}}  -->
+              <li [ngClass]="{'redText' : value.name == 'Migraine'}" style="position:relative;height:12px;">
+                <span style="position:absolute;left:0px;">{{value.myDateTime | date: 'h:mm a'}}</span>
+                <span style="position:absolute;left:60px;">{{value.name}}
+                    <div class="redText" style="display:inline;font-size:14px;" [ngClass]="{'hideMe' : value.name != 'Migraine'}">
+                      ({{item.hours}}hrs, {{item.minutes}}m after)
+                    </div>
+              </span>
+              </li>
+            </ul>
+            </div>
+        </div>
+        <!-- days without migraine -->
+        <br/>
+        <div [ngClass]="{'hideMe' : arrayOfDayObjects_noMigraine.length == 0}" style="margin-bottom:0px;font-size:18px;text-align:center;padding:20px 20px 0px 20px; width:320px; margin:auto !important;">{{myName}}, No Migraine After</div>
+        <div style="background-color:#bff2f9;">
+            <hr class="mm_hr_blue" style="margin:8px 20px !important;">
+        </div>
+
+        <div *ngFor="let item of arrayOfDayObjects_noMigraine;let i = index;" style="padding:10px 20px; width:320px;text-align:left;">
+
+            <div style="border:0px solid red;text-align:left;padding:0px 0px 0px 45px;font-size:16px;" [ngClass]="{'hideMe' : item.hasMigraine == 'yes'}">{{ item.theDisplayDate }}, No Migraine Day</div>
+
+            <div *ngFor="let value of item.theEventArray" [ngClass]="{'hideMe' : value.name == 'Migraine'}">
+            <ul class="detailList" style="padding: 0px 0px 0px 0px !important;">
+                <li style="font-size:14px;text-align:left;line-height:18px !important;padding-left:45px;padding-bottom:0px !important">{{value.myDateTime | date: 'h:mm a'}} {{value.name}}</li>
+            </ul>
+            </div>
+            <div class="redText" [ngClass]="{'hideMe' : item.nextDayMig == false}"    style="font-size:11px;text-align:left;line-height:18px !important;padding-left:45px;padding-bottom:0px !important">
+              Note: migraine next day ({{item.hours}}hrs, {{item.minutes}}m after)
+            </div>
+        </div>
+
+
+  <div style="margin:20px 20px 30px 20px;border-radius:20px;background-color:#55b5eb;color:white;font-size:16px;padding:12px;">
+    <div style="margin:10px auto 3px auto;border:0px solid red;font-size:20px;width:100% !important;text-align:center;color:white !important;">How we scored {{myNameLowerCase}}</div>
+    <!-- <div style="margin:0px auto 15px auto;font-size:14px;width:100% !important;text-align:center;">(Data Explained!)</div> -->
+    With {{myNameLowerCase}}, you get a migraine later that day {{ theItem.within24HoursScore | number:0 }}% of the time. <!-- Your starting score is half of this percentage. --> As we sort through other migraine patterns, we will compare them to this score of {{ theItem.within24HoursScore | number:0 }} to see how important each pattern is in your overall migraine picture.<br/><br/>
+
+    <span [ngClass]="{'hideMe' : theItem.finalScoreType == 'within24Hours'}" >We found a significant pattern! You have a cluster from hours {{theItem.clusterStart}} to {{theItem.clusterEnd}}. The cluster score is {{theItem.highestHighestScore}}.<br/>
+    </span>
+
+    <span [ngClass]="{'hideMe' : theItem.finalScoreType != 'within24Hours'}" >There were no significant patterns found. Your final score is: {{ theItem.within24HoursScore | number:0 }}<br/>
+    </span>
+
+  </div>
+
+  </div>
+  </div>
+  <!-- END EVENTS LIST -->
+</ion-content>
+
+
+<!-- view : overlay -->
+<div class="oLay scrollMe" style="margin-top:20px;" (click)="scoreExpHide = true;" [ngClass]="{'hideMe' : scoreExpHide}">
+
+	<div class="popUpWrap">
+
+    <div class="popUpShort">
+        <div class="popUpContent center">
+            <span style="font-size:20px;">How is this scored?</span><br/><br/>
+            <span style="font-size:18px;">The biggest factor in the score is how often migraines happen after a trigger is enountered or consumed.
+            <br/><br/>
+            The score increases if migraines often happen quickly after the trigger. It is decreased if the migraines are delayed.
+            <br/><br/>
+            The score is also adjusted as we look at trigger amounts, trigger combinations, and more.
+            <br/><br/>
+            </span>
+            <div class="deleteBtnWrapInline">
+              <button (click)="scoreExpHide = true;" class="goBtn">Ok</button>
+            </div>
+            <br/>
+        </div>
+    </div>
+
+	<button class="btn_closeMe" (click)="scoreExpHide = true;">X</button>
+	</div>
+</div>

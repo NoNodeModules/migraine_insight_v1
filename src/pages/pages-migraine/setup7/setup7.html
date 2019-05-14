@@ -1,0 +1,45 @@
+<!-- Generated template for the Setup6Page page. -->
+
+<ion-content class="mm_content_setup no-scroll" no-bounce>
+
+	<div class="setupTop">
+		<div class="setupTopIconAndTitle">Tracker Setup</div>
+	</div>
+
+  <ion-scroll class="setupMiddle center" direction="y" no-bounce>
+        <div class="setupQuestionText" style="padding-top:10px !important;">
+            Do you take magnesium supplements?
+            <div style="height:10px;line-height:10px;margin:0px;border:0px solid purple;">&nbsp;</div>
+
+            <div class="wideWrap" style="margin-bottom:5px !important;">
+                <button class="wideTileGreen" [ngClass]="{'dimBack' : mag == false}" (click)="this.mag=true;">
+                    <div class="wideTileWordTitleStyleCheckLeft" >Yes, I take magnesium.</div>
+                    <div class="trackThisBtnWrapLeft">
+                        <img id="trackThisBtn" [ngClass]="{'hideMe' : mag == false, 'showMe' : mag == true}" src="img/checkmark_white_100.png" />
+                    </div>
+                </button>
+            </div>
+
+            <div class="wideWrap">
+                <button class="wideTile" [ngClass]="{'dimBack' : mag == true}" (click)="this.mag=false;">
+                    <div class="wideTileWordTitleStyleCheckLeft">No, I don't.</div>
+                    <div class="trackThisBtnWrapLeft">
+                        <img id="trackThisBtn" [ngClass]="{'showMe' : mag == false, 'hideMe' : mag == true}" src="img/checkmark_white_100.png" />
+                    </div>
+                </button>
+            </div>
+            <div class="wideWrap">
+                <div class="wideTileInfo">
+                  Why ask about magnesium? <br/>&nbsp;<br/>
+                  Taking a daily supplement of magnesium (325mg) has been shown to reduce the frequency and duration of
+                  migraine attacks in some people, according to meta analysis of randomized controlled trials. Many migraine sufferers take magneisum to reduce symptoms.
+                </div>
+            </div>
+          </div>
+</ion-scroll>
+
+<div class="setupBottomBar">
+  <div class="mm_ButtonStyle3" tappable (tap)="goTo();">Next</div>
+</div>
+
+</ion-content>

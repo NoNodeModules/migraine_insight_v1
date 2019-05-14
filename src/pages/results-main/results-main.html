@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar hideBackButton="false" swipeBackEnabled="false">
+      <button ion-button menuToggle start>
+          <img src="img/menu.png" class="menuImg" />
+      </button>
+      <ion-title>Your Results</ion-title>
+      <div style="position:absolute;top:35px;left:80%;color:white;border:0px solid yellow;" tappable (tap)="goToResults();">
+         Progress
+      </div>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content class="mm_content" swipeBackEnabled="false">
+  	<br/>
+    <div class="explainTitle" style="margin-top:8px;margin-bottom:7px;">How often do I get<br/>migraines after this?</div>
+  	<!--<div class="wideWrap" id="baseTriggersDiv"> -->
+      <!-- no results yet message-->
+      <div class="wideTile meterBox blue1Back" style="width: 300px !important;margin:25px auto 36px auto !important;background-color: #6ac2f2 !important;border: 8px solid #6cb4dc;border-radius: 24px;height:180px;padding:10px !important;" [ngClass]="{'hideMe': hideNoResultsMessage}">
+          <div class="rwtWrap" style="position:relative;margin:5px auto 0px auto !important; width:95%;left:0px;">
+              <div class="center" style="color:white;">
+                <span style="font-size:22px;">No Results</span><br/>
+                <span style="font-size:18px;">( yet! )<br/><br/>Track an item 5 times to see results. When results are ready, they will appear here.</span>
+              </div>
+          </div>
+      </div>
+
+  		<!--<div *ngFor="let trig of theList">  | sortByHHS"> -->
+
+      <!-- MAIN LIST -->
+      <ion-list class="wideWrap" style="margin-bottom:3px !important;" [ngClass]="{'hideMe' : theList.length == 0}" id="yourTriggersDiv" no-lines [virtualScroll]="theList" [approxItemHeight]="'58px'" [virtualTrackBy]="name" [bufferRatio]="3.1">
+
+        <ion-item tappable  class="wideTile meterBox" *virtualItem="let trig"  (tap)="pick(trig);" [ngClass]="{ meterGreenBox : trig.highestHighestScore >= 0,meterYellowBox : trig.highestHighestScore >= 25,meterOrangeBox : trig.highestHighestScore >= 50,meterRedBox : trig.highestHighestScore >= 75 }" > <!-- [ngClass]="{redBack : (event.name === 'Migraine'), tileAnimate : (tileAnimateOn === 'yes')}"-->
+
+              <!-- METER -->
+
+                  <!-- box -->
+                  <!-- <button class="wideTile meterBox" (click)="pick(trig);" [ngClass]="{ meterGreenBox : trig.highestHighestScore >= 0,meterYellowBox : trig.highestHighestScore >= 25,meterOrangeBox : trig.highestHighestScore >= 50,meterRedBox : trig.highestHighestScore >= 75 }"> -->
+
+                      <div class="rwtWrap">
+                          <div class="resultsWideTileWordTitle">{{trig.name}}
+                              <div class="timesTracked" style="font-weight:bold;font-size:16px;">Times tracked: {{trig.timesTracked}}</div>
+                          </div>
+                      </div>
+
+<!-- ngClass]="{'severityBtn_on' : sev1On, 'severityBtn_off' : !sev1On}" -->
+                      <div class="wideTileScoreCarat">
+                          <i class="fa fa-chevron-right" [ngClass]="{greenCarat : trig.highestHighestScore >= 0,
+                              yellowCarat : trig.highestHighestScore >= 25,
+                              orangeCarat : trig.highestHighestScore >= 50,
+                              redCarat : trig.highestHighestScore >= 75}"></i>
+                      </div>
+
+                      <div id="meterDisplay" style="position:absolute;top:9px;left:60% !important;">
+                          <div id="mainImg" [ngClass]="{ meterImg0 : trig.highestHighestScore >= 0,
+                                  meterImg5 : trig.highestHighestScore >= 5,
+                                  meterImg10 : trig.highestHighestScore >= 10,
+                                  meterImg25 : trig.highestHighestScore >= 25,
+                                  meterImg35 : trig.highestHighestScore >= 35,
+                                  meterImg45 : trig.highestHighestScore >= 45,
+                                  meterImg48 : trig.highestHighestScore >= 48,
+                                  meterImg50 : trig.highestHighestScore >= 50,
+                                  meterImg52 : trig.highestHighestScore >= 52,
+                                  meterImg55 : trig.highestHighestScore >= 55,
+                                  meterImg65 : trig.highestHighestScore >= 65,
+                                  meterImg75 : trig.highestHighestScore >= 75,
+                                  meterImg80 : trig.highestHighestScore >= 80,
+                                  meterImg90 : trig.highestHighestScore >= 90,
+                                  meterImg95 : trig.highestHighestScore >= 95,
+                                  meterImg100 : trig.highestHighestScore == 100 }"
+                          style="border:0px solid green;position:absolute;top:0px;left:0px;width:77px;height:55px;z-index:4;">&nbsp;
+                          </div>
+
+                          <div class="resultsMainScore">{{(trig.highestHighestScore | number:0)*1}}</div>
+
+                          <!-- description -->
+                          <div class="mediumText hideMe" style="border:0px solid purple;position:absolute;top:37px;left:-27px;font-size:14px;width:136px;z-index:5;" [ngClass]="{showMe : trig.highestHighestScore < 25}">RARE OR NEVER</div>
+                          <div class="mediumText hideMe" style="border:0px solid purple;position:absolute;top:37px;left:-10px;font-size:16px;width:100px;z-index:5;" [ngClass]="{showMe : trig.highestHighestScore >= 25 && trig.highestHighestScore < 50}">SOMETIMES</div>
+                          <div class="mediumText hideMe" style="border:0px solid purple;position:absolute;top:37px;left:-11px;font-size:16px;width:100px;z-index:5;" [ngClass]="{showMe : trig.highestHighestScore >= 50 && trig.highestHighestScore < 75}">OFTEN</div>
+                          <div class="mediumText hideMe" style="border:0px solid purple;position:absolute;top:37px;left:-11px;font-size:16px;width:100px;z-index:5;" [ngClass]="{showMe : trig.highestHighestScore >= 75}">VERY OFTEN</div>
+                          <!-- end description -->
+
+                      </div>
+              </ion-item> <!-- end box -->
+
+              <!-- METER END -->
+
+
+              <!-- METER DECOY -->
+              <!-- METER DECOY END -->
+  	</ion-list>
+  	<!--</div>-->
+<br clear="all">
+      <!-- Not enough data -->
+    <div class="explainTitle" style="margin-top:0px;margin-bottom:15px;">Not Enough Data</div>
+  	<div class="wideWrap" id="baseTriggersDiv">
+  		<ion-list *ngFor="let trig of theListNotEnoughData" style="margin-bottom:13px !important;"> <!-- | orderBy: order : reverse" -->
+          <ion-item class="wideTile meterBox blue1Border">
+              <div class="rwtWrap" style="width:260px;">
+                  <div class="resultsWideTileWordTitle">{{trig.name}}
+                      <div class="timesTracked" style="font-weight:bold;font-size:16px;">Times tracked: {{trig.timesTracked}}</div>
+                  </div>
+              </div>
+            </ion-item>
+  	     </ion-list>
+    </div>
+  	<br/><br/>
+  </ion-content>

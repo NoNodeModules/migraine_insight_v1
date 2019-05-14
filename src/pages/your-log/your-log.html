@@ -1,0 +1,409 @@
+<ion-header>
+<ion-navbar hideBackButton="true">
+    <div class="toolbar-title-left">Migraine Tracker</div>
+    <!-- <div style="position:absolute;top:35px;left:60%;color:white;border:0px solid yellow;" tappable (tap)="openStats();oStatshide = false;">
+        Progress
+    </div> -->
+    <div style="position:absolute;top:35px;left:72%;color:white;border:0px solid yellow;" tappable (tap)="goToResults();">
+        Your Results
+    </div>
+</ion-navbar>
+</ion-header>
+
+<!-- v1 before tabs <ion-header>
+<ion-navbar hideBackButton="true">
+    <button ion-button menuToggle start>
+        <img src="img/menu.png" class="menuImg" />
+    </button>
+    <ion-title class="toolbar-title-with-right-btn">Migraine Tracker</ion-title>
+    <ion-buttons end>
+        <div class="button-icon addBtn" tappable (tap)="openStats();oStatshide = false;">
+            Progress
+        </div>
+    </ion-buttons>
+</ion-navbar>
+</ion-header> -->
+
+<ion-content style="background-color:#d2e7f4;" class="mm_content no-scroll" (swipe)="swipeEvent($event)" has-bouncing="true" can-swipe-back=“false”>
+<div style="background-color:white;">
+
+    <!-- Top Date with Date back and forth control -->
+    <div class="dateTopTimelineWrap" style="background-color:white;">
+          <button tappable id="leftArrow" class="icon_leftArrow animated infinite bounce" [ngClass]="{'icon_leftArrowDim': leftArrowDim}" (tap)="backOneDay();"></button>
+
+          <button class="dateTopTimeline" (click)="oCalHide = false;" style="border:0px solid aqua;">{{tl_myDateString}}</button>
+
+          <button style="border:0px solid red;z-index:200 !important;float:right;margin:18px 50px 0px 0px;background-color: #fff;"> <!-- (tap)="oCalHide = false;" -->
+              <img src="img/things/calendar_blue_100.png" width="28" />
+          </button>
+
+          <button id="rightArrow" class="icon_rightArrow" style="border:0px solid purple;" [ngClass]="{'icon_rightArrowDim': rightArrowDim}" (click)="forwardOneDay();"></button>
+     </div>
+
+     <!-- Main Message -->
+     <div id="mainMessage" style="position:relative;top:0px;height:100px;text-align:center !important;font-family:'VagLight' !important;color:#6cb4dc;font-size:30px;line-height:34px !important;padding:20px;background-color:white;"
+     [ngClass]="{'hideMe' : eventsArray.length > 0}">{{mainMessage}}</div>
+
+
+
+     <!-- LIST OF EVENTS -->
+     <ion-list class="wideWrap" style="margin-bottom:3px !important;background-color: white !important;" [ngClass]="{'hideMe' : eventsArray.length == 0}" [virtualScroll]="eventsArray" [approxItemHeight]="'74px'" [virtualTrackBy]="myDateTime" [bufferRatio]="6.1">
+             <!--  *** fade-in *** ng-repeat="(key, event) in events | orderBy:'myDateTime' | reverse" name="{{item.name}}" id="{{item.name}}">   *ngFor="let event of events | async | orderbydate"    *virtualItem="let event"  *ngFor="let event of eventsArray"   | async | orderbydate"  -->
+      <ion-item class="wideTile blueBack imanEvent" (click)="openInfoOverlay(event, event.$key);" *virtualItem="let event" [ngClass]="{redBack : (event.name === 'Migraine')}" > <!-- [ngClass]="{redBack : (event.name === 'Migraine'), tileAnimate : (tileAnimateOn === 'yes')}"-->
+
+
+        <div class="wideTileTimeWrap">
+            <div class="wideTileTime" [ngClass]="{redText : event.name === 'Migraine', hideMe :
+            event.name === 'Period'}">
+                {{ event.myDateTime | date: 'h:mm a' }}
+            </div>
+
+            <div class="wideTileTime" [ngClass]="{periodText : event.name === 'Period', hideMe :
+            event.name != 'Period' }" style="line-height:28px;">
+                TODAY
+            </div>
+        </div>
+
+        <!-- name -->
+        <button class="wideTileWordTitle" style="color:white !important;" [ngClass]="{hideMe : event.name == 'Period', 'wideTileWordTitleOnWeb': onWeb }">
+          {{ event.name }}
+          <div style="position:relative;font-size:12px;color:white !important;" [ngClass]="{hideMe : event.type != 'treatmentEvent' || event.treatment_showUnitAmount == false}">
+              {{event.treatment_amount}} {{event.treatment_unitType}}
+          </div>
+        </button>
+
+        <!-- name - PERIOD -->
+        <div class="wideTileWordTitle" style="left:118px !important;color:white !important;" [ngClass]="{hideMe : event.name != 'Period', 'wideTileWordTitleOnWeb': onWeb }">
+            Period
+            <span style="position:relative;top:-1px;font-size:14px;">(Start day)</span>
+        </div>
+
+        <!-- edit button  (click)="openInfoOverlay(event, event.$key);" -->
+        <button class="wideTileEdit" style="color:white;" [ngClass]="{red2Text : event.name === 'Migraine'}">edit</button>
+    </ion-item>
+</ion-list>
+<!-- </div> -->
+
+
+<!-- START SECTION bottom form -->
+<div style="background-color:#d2e7f4;padding:0px 0px;margin-top:20px !important;min-height:400px;border-radius:20px 20px 0px 0px;">
+<!-- <form [formGroup]="registerForm" (submit)="doRegister()" novalidate class="fixpristine center"> -->
+  <form (submit)="addTriggerFromInput();" id="myForm2">
+
+    <input type="text" name="imp" id="imp" class="basicInput" style="width:calc(100% - 24px) !important;margin:12px 12px 8px 12px;padding-left:12px !important;"
+    onfocus="this.placeholder=''" placeholder="Add to log..." autocorrect="off" autocapitalize="sentences" required ng-trim="false"
+    [(ngModel)]="input1" (ngModelChange)="processTextChange();" [ngModelOptions]="{standalone: true}" />
+
+    <!-- onBlur="this.value='';"  <ion-datetime name="timeInput" displayFormat="HH:mm" style="border: 2px solid #6cb4dc !important;float:left;margin:4px 0px 6px 12px !important; width:95px; height:33px !important; display:inline; padding:8px 0px 0px 10px !important; font-size:15px !important; display:block; -webkit-appearance:button;color: #6cb4dc !important;background-image: none !important;background:none !important; background-color: white !important; font-weight:bold;border-radius:12px;font-family: 'VagBold';"
+    [(ngModel)]="theTime"></ion-datetime> --> <!-- (ngModelChange)="changeTime_timeInput();" -->
+
+    <input type="time" id="timeBtn" name="timeBtn" style="border: 2px solid #6cb4dc !important;
+    float:left;margin:4px 0px 6px 12px !important; width:95px; height:33px
+    !important; display:inline; padding:8px 0px 0px 10px !important; font-size:15px
+    !important; display:block; -webkit-appearance:button; color: #6cb4dc !important; background-color:white !important;
+    border-radius:12px;" value="{{theDT | date:'HH:mm'}}" (change)="changeTime_InputPanel();"
+    placeholder="{{theDTString | date:'HH:mm'}}" required>
+
+    <!-- [(ngModel)]="theDT" (change)="changeTimeInput($event);"
+    [ngModelOptions]="{standalone: true}" /> -->
+
+    <!-- displayFormat="h:mm a" (ngModelChange)="changeTime_timeInput();" -->
+
+    <!-- back 10 minutes -->
+    <button type='button' (click)="back1Hour();" class="backBtn back1Hour">BACK<br/>1 HR</button>
+
+    <!-- back 1 hour -->
+    <button type='button' (click)="back10Mins();" class="backBtn back10Mins">BACK<br/>10 MINS</button>
+
+    <button style="width:80px !important; height:40px !important; margin:0px 12px 6px 0px
+    !important; padding:3px 0px 0px 0px !important; font-size:18px;background-color:#6cb4dc;
+    color:white; border-radius:13px;float:right;">Add</button>
+
+</form>
+
+<hr class="mm_hr_blue" style="margin-top:60px !important" [ngClass]="{'hideMe' : hideSuggestionNoTriggers === false}">
+
+<div id="mainMessage" class="hideMe" style="position:relative;top:15px;height:150px;text-align:center !important;font-family:'VagLight' !important;color:#6cb4dc;font-size:30px;line-height:34px !important;padding:20px;" [ngClass]="{'showMe' : hideSuggestionNoTriggers === false}">
+    <br />
+    You have no active trackers.
+    <br />&nbsp;<br/>
+    <span class="suggestionBoxBtn" (click)="goToTriggers();">Add Trackers</span>
+</div>
+
+<!-- TILES SECTION -->
+<div id="hasTiles" class="showMe" >
+
+    <div class="row flex-container">
+
+      <!-- migraine -->
+      <div class="flex-item">
+      <button tappable id="Migraine" name="migraineTile" (tap)="selectMigraine();" class="tileRed redBack"
+       [ngClass]="{dimBack : eventsHasMigraine}">
+
+          <div id="tileTopPart" class="" style="z-index:3;height:40px;">
+              <div id="timeTag" class="hideMe">{{tileSquareTime | date:'h:mm a'}}</div>
+              <div id="tileImg" class="showMe">
+                  <img src="img/things/migraine_100.png" style="height:44px;margin-top:7px;" />
+              </div>
+          </div>
+
+          <div id="tileBottomPart" class="tileBottomPart" style="z-index:4;border:0px solid red;">
+              <div id="tileWordsInner" class="tileWordsInner" style="font-size:16px; !important;">Migraine</div>
+          </div>
+      </button>
+      </div>
+
+      <!-- <ion-list>
+        <ion-item class="text" (click)="pickTracker(tracker)" *ngFor="let tracker of trackersAll | async">
+          name: {{ (tracker.name | json) }}
+        </ion-item>
+      </ion-list> -->
+
+        <!-- tiles | async | alphabetizeIt -->
+        <div data-tap-disabled="true" class="flex-item" *ngFor="let trig of trackers" [ngClass]="{hideMe : trig.active == false}">
+              <button data-tap-disabled="true" class="tileBlue imaTile" id={{trig.name}} (click)="selectMe(trig, $event);">
+
+                  <div id="tileTopPart" id="{{trig.name}}" style="z-index:3;margin-left:-2px !important;">
+                      <div id="timeTag" class="hideMe" >{{theDT | date:'h:mm a'}}</div>
+                      <div id="tileImg" class="showMe">
+                          <img [ngClass]="{hideMe : trig.imgname === 'custom'}" src="img/things/{{trig.imgname}}_100.png" />
+                      </div>
+                  </div>
+
+                  <div id="tileBottomPart" class="tileBottomPart" [ngClass]="{tileBottomPartCustom : trig.imgname === 'custom'}"
+                  style="z-index:4;border:0px solid red;">
+                      <div id="tileWordsInner" class="tileWordsInner">{{ trig.name }}</div>
+                  </div>
+
+              </button>
+        </div>
+
+        <!-- Filler Tiles -->
+        <div class="flex-item hideMe" [ngClass]="{'showMe': filler1Show}" id="filler1">
+          <div class="tile dimBack helperTileWrap">
+            <div class="helperTile">You can<br/>do it!</div>
+          </div>
+        </div>
+
+        <div class="flex-item hideMe" [ngClass]="{'showMe': filler2Show}" id="filler2">
+        <div class="tile dimBack helperTileWrap">
+          <div class="helperTile">Keep<br/>tracking!</div>
+        </div>
+        </div>
+        <!-- end Filler Tiles -->
+
+        </div>
+        <!-- end Tiles -->
+    </div>
+  </div> <!-- white wrapping -->
+  </div> <!-- bottom form section -->
+</ion-content>
+
+
+
+
+<!-- view : overlay stats -- REMOVE THIS LATER! todo -->
+<div id="oStats" class="oLay scrollMe" [ngClass]="{'hideMe' : oStatshide}" (click)="oStatshide = true;" style="padding-bottom:10px !important;">
+  <div class="popUpWrap" (click)="$event.stopPropagation();" style="padding-bottom:10px !important;">
+  <div class="popUpShort" style="margin-bottom:30px !important;padding-bottom:20px !important;padding:30px 18px 40px 18px">
+
+        <div class="popUpContent">
+            <div style="font-size:20px;margin-bottom:5px;color:white;">Your Progress</div>
+
+            <div class="statsWrap" [ngClass]="{'hideMe' : timeBetweenMigrainesNA == true}">
+                <div class="statsInner1" style="padding:5px 0px 0px 3px !important;line-height: 14px !important;">
+                    <span style="font-size:24px;line-height:20px !important;">{{avgTimeBetweenMigraines_Days}}</span><br/>
+                    <span style="font-size:13px;">Days<br/>
+                    {{avgTimeBetweenMigraines_Hours}} hours</span>
+                </div>
+                <div class="statsInner2">Average time between migraines</div>
+            </div>
+
+            <div class="statsWrap" [ngClass]="{'hideMe' : timeBetweenMigrainesNA != true}">
+                <div class="statsInner1" style="padding:4px 0px 0px 2px !important;font-size:14px;line-height:14px;">Not<br/>enough<br/>data</div>
+                <div class="statsInner2">Average time<br/>between migraines</div>
+            </div>
+
+            <div class="statsWrap">
+                <div class="statsInner1" style="font-size:26px;line-height:46px;">{{mostRecentMigraine_dayssince}}</div>
+                <div class="statsInner2">Days since last migraine</div>
+            </div>
+
+            <div class="statsWrap">
+                <div class="statsInner1" style="font-size:18px;line-height:46px;">{{dayOfWeekMostMigraines}}</div>
+                <div class="statsInner2">Day of week with most migraines</div>
+            </div>
+
+
+            <div class="statsWrap" [ngClass]="{'hideMe' : trackingPeriod == false}">
+                <div class="statsInner1" style="font-size:26px;line-height:46px;">{{mostRecentPeriod_days}}</div>
+                <div class="statsInner2">Current day of menstrual cycle</div>
+            </div>
+
+            <div class="statsWrap">
+                <div class="statsInner1" style="font-size:26px;line-height:46px;">{{daysLogged}}</div>
+                <div class="statsInner2">Days logged</div>
+            </div>
+
+            <div style="font-size:14px;padding-top:28px;color:white;">* Average time between migraines is the average time over the last two months.</div>
+
+        </div>
+
+  </div>
+  <button class="btn_closeMe" (click)="oStatshide = true;">X</button>
+  </div>
+</div>
+
+
+<!-- view : overlay -->
+<div id="oInfo" class="oLay scrollMe" [ngClass]="{'hideMe' : oInfoHide}" (click)="closeOverlay($event);oInfoHide = true;">
+
+  <div class="popUpWrap" (click)="$event.stopPropagation();">
+  <div class="popUp">
+    <div id="popUpImgAndName" [ngClass]="{hideMe : currentObject.imgname === 'custom'}">
+        <img src="img/things/{{currentObject.imgname}}_100.png" class="showMeInline" />
+        {{currentObject.name}}
+    </div>
+
+    <div id="popUpImgAndNameCustom" [ngClass]="{hideMe : currentObject.imgname != 'custom'}">
+        {{currentObject.name}}
+    </div>
+
+	  <div class="popUpContent">
+
+      <div class="hideMe center" [ngClass]="{ showMe : currentObject.name === 'Period' }" style="font-size:16px;">
+      <br>To track your period, record it on the first day of your cycle.<br>&nbsp;<br>Do not record it on all days you have your period, only the first day.
+      </div>
+
+		<div class="time" [ngClass]="{hideMe : currentObject.name === 'Period' }">
+			<div class="timeBtnWrap" (click)="$event.stopPropagation();">
+          <input type="time" required id="timeBtnOverlay" name="timeBtnOverlay" style="border: 2px solid #6cb4dc
+          !important;float:left;margin:0px 0px 0px -10px !important; width:135px; height:35px !important;
+          display:inline; padding:4px 0px 0px 10px !important; font-size:20px
+          !important; display:block; -webkit-appearance:button;
+          border-radius:12px; text-align:center;background-color:white !important;color: #6cb4dc !important;" value="{{myDateTimeOverlay | date:'HH:mm'}}"
+          placeholder="{{myDateTimeOverlayString | date:'HH:mm'}}" (change)="changeTime_Overlay();">
+			</div>
+		</div>
+
+    <!-- NORMAL amount controls (don't show if period) logic: if treatment event and showunitamount is true -->
+		<div class="amount" style="position:relative;" [ngClass]="{ hideMe : currentObject.name === 'Period'
+    || caf_related == 'yes' || currentObject.type == 'treatmentEvent' == true, showMe : currentObject.type == 'treatmentEvent' && currentObject.treatment_showUnitAmount == false }">
+			<button (click)="chooseAmt($event, 1);" class="amtCell amt1_off"
+      [ngClass]="{amt1_on : currentObject.amount == 1}"></button>
+			<button (click)="chooseAmt($event, 2);" class="amtCell amt2_off"
+      [ngClass]="{amt2_on : currentObject.amount == 2}"></button>
+			<button (click)="chooseAmt($event, 3);" class="amtCell amt3_off"
+      [ngClass]="{amt3_on : currentObject.amount == 3}"></button>
+      <div (click)="amtExpHide = false;" style="position:absolute; top:62px; left:188px;"
+      [ngClass]="{hideMe : currentObject.name === 'Period' || caf_related == 'yes' }">
+      <i class="fa fa-question-circle-o" style="margin:-1px 0px 0px 18px;font-size:18px;" aria-hidden="true"></i>
+      </div>
+		</div>
+
+    <!-- TREATMENT amount controls (don't show if not treatment -->
+		<div class="amount" style="position:relative;" [ngClass]="{ hideMe : currentObject.type != 'treatmentEvent' || currentObject.treatment_showUnitAmount == false }">
+      <div class="center" style="padding:0px 0px 15px 0px;">
+        Amount: &nbsp;&nbsp;<input id="t" type="text" class="inputTextShort" [(ngModel)]="currentObject.treatment_amount" />&nbsp; {{currentObject.treatment_unitType}}
+      </div>
+      <br/>
+		</div>
+
+    <!-- CAFFEINE CONTAINING items - controls   ... HIDDEN ... -->
+		<div class="amount" style="text-align:left !important;font-family: 'VagBold';" [ngClass]="{hideMe : caf_related != 'yes' || currentObject.name == 'Caffeine'}">
+
+      <div class="center" style="padding:0px 0px 15px 58px;">
+                    Size: &nbsp;<input id="caf_size" type="text" class="inputTextShort" ng-model="caf_size"
+				placeholder="{{caf_size}}" /> oz
+      </div>
+
+      <div style="padding:0px 0px 15px 25px;">
+                    Caffeine: &nbsp;<input id="caf_mg1" type="text" class="inputTextShort" ng-model="caf_mg1"
+				placeholder="{{caf_mg1}}" /> mg
+      </div>
+
+      <div style="font-size:13px;margin-bottom:30px;">*{{currentObject.name}} averages {{caf_mgPerUnit}}mg caffeine per oz.</div>
+
+		</div>
+
+    <!-- CAFFEINE controls    ... HIDDEN ...  -->
+		<div class="amount" style="text-align:left !important;" [ngClass]="{hideMe : caf_related != 'yes' || currentObject.name != 'Caffeine'}">
+                 <div style="padding:0px 0px 15px 25px;">
+                    Amount: &nbsp;<input id="caf_mg2" type="text" class="inputTextShort" ng-model="caf_mg2"
+				placeholder="{{caf_mg2}}" /> mg
+                </div>
+		</div>
+
+		<div class="deleteBtnWrap" (click)="$event.stopPropagation();"
+    [ngClass]="{moreMarginTop : currentObject.name === 'Period' }">
+			<button (click)="deleteMe();oInfoHide = true;" class="goBtn">Delete Entry</button>
+    </div>
+
+
+		<!-- ADD THIS LATER! FI X todo. UI is done. no data work done yet. see function in .js file.
+             <div class="containsBtnWrap" (click)="containsBtnToggle($event);">
+                <div id="containsBtnWords" class="showMe">Contains Caffeine</div>
+                <div id="containsBtnWords2" class="hideMe">No Caffeine</div>
+                <img id="containsCheckmark" class="showMe" src="img/checkmark_white_100.png" />
+		</div> -->
+
+		<div class="stats" style="margin-top:15px !important;">
+			{{currentTimesTrackedMessage}}
+		</div>
+
+    </div>
+	  </div>
+	  <button class="btn_closeMe" (click)="closeOverlay($event);oInfoHide = true;">X</button>
+    </div>
+</div>
+
+
+<!-- view : overlay to ask if new trigger tracker -->
+<div class="oLay scrollMe" style="margin-top:20px;z-index:201 !important;" (click)="closeCalendarOverlay();oCalHide = true;" [ngClass]="{'hideMe' : oCalHide}">
+<div class="popUpWrap" (click)="$event.stopPropagation();">
+<div class="popUpShort">
+      <div class="popUpContent center" style="font-size:20px;">
+          Go To Date
+
+          <ion-datetime class="blueOnWhiteBtn" style="position:relative;margin:20px 0px 0px 32px !important;height:30px;
+              border:0px solid green;width:160px;"
+              name="odate" placeholder="{{overlayDate}}"
+              displayFormat="MMM DD, YYYY" min="2016-01-01" max={{maxPickerDate}} [(ngModel)]="overlayDate"
+              pickerFormat="MMMM DD, YYYY">
+          </ion-datetime>
+
+          <button (click)="closeCalendarOverlay();oCalHide = true;" class="blueOnWhiteBtn" style="position:absolute;left:218px;top:74px;width:50px;margin:0px 0px 0px 0px !important;display:inline;color:#6cb4dc !important;">Go</button>
+
+          <br/>
+          <button (click)="goToToday();" class="whiteOnRedBtn" style="font-size:18px !important;height:30px !important;width:120px;margin: 10px auto 0px auto !important;padding: 6px 0px 0px 0px !important;">Today</button>
+      </div>
+</div>
+
+<button class="btn_closeMe" (tap)="closeCalendarOverlay();oCalHide = true;">X</button>
+</div>
+</div>
+
+
+
+<!-- view : overlay -->
+<div class="oLay scrollMe" style="margin-top:20px;" (click)="amtExpHide = true;" [ngClass]="{'hideMe' : amtExpHide}">
+
+	<div class="popUpWrap">
+
+    <div class="popUpShort">
+        <div class="popUpContent center">
+            <span style="font-size:20px;">What's a normal amount?</span><br/><br/>
+            Normal is whatever is a usual amount for you. If the trigger is food, this may not be a standard portion - rather, it's the amount you usually eat.<br/><br/>
+            If you consume or encounter less than your normal amount, just mark it as 'a bit.'<br/><br/>
+            If it's more, mark 'a lot.'<br/><br/>
+            <br/>
+            <div class="deleteBtnWrapInline">
+              <button (click)="amtExpHide = true;" class="goBtn">Ok</button>
+            </div>
+            <br/>
+        </div>
+    </div>
+
+	<button class="btn_closeMe" (click)="amtExpHide = true;">X</button>
+	</div>
+</div>

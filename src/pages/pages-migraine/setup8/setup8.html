@@ -1,0 +1,177 @@
+<!-- Generated template for the Setup6Page page. -->
+
+<ion-content class="mm_content_setup no-scroll" no-bounce> <!-- (click)="this.keyboard.close();" -->
+
+	<div class="setupTop setupTopDarkColorBack" style="margin-bottom:0px !important;">
+		<div class="setupTopIconAndTitle setupTopIconWhite whiteText">Review</div>
+	</div>
+
+  <ion-scroll class="setupMiddle center" style="background-color:white;" direction="y" no-bounce can-swipe-back=“false”>
+
+		<div style="width:100%;text-align:center;margin: 0px auto 15px auto;padding: 16px;color: #6cb4dc;background: #eef7fa;height: 55px;border-bottom: 2px solid #6cb4dc;">
+				Add: <div tappable (tap)="openAddTrigger();" class="smallAddBtn" style="margin:0px 5px;">
+						+ trigger
+				</div>
+				<div tappable (tap)="openAddTreatment();" class="smallAddBtn" style="margin:0px 5px;">
+						+ treatment
+				</div>
+				<div tappable (tap)="openAddSymptom();" class="smallAddBtn" style="margin:0px 5px;">
+						+ symptom
+				</div>
+		</div>
+
+			<div class="explainTitle" style="margin-top:15px !important;margin-bottom:10px !important;">Your Trackers</div>
+
+      <div class="wideWrap">
+        <button class="wideTileGreen" *ngFor="let trig of trackers | async" (click)="pickTriggerOpenOverlay(trig);">
+            <div class="wideTileWordTitleStyleCheckRight">{{ trig.name }}</div>
+            <div class="trackThisBtnWrap">
+                <img id="trackThisBtn" src="img/checkmark_white_100.png" />
+            </div>
+        </button>
+      </div>
+
+  </ion-scroll>
+
+
+  <div class="setupBottomBar setupBottomBarStyle2" style="height:125px;">
+    <div class="mm_ButtonStyle3" tappable (tap)="o1hide = false">Start Tracking</div>
+    <div (click)="o4hide = false" class="smallerLink" style="margin-top:10px;color:white;display:block;">
+        Or, see more trigger examples
+    </div>
+		<br/>
+  </div>
+</ion-content>
+
+<!-- Overlay 1 -->
+<div id="o1" class="oLay" (click)="o1hide = true;" [ngClass]="{'hideMe' : o1hide}">
+	<div class="popUpWrap center" (click)="$event.stopPropagation();">
+	<div class="popUp center" style="padding:40px 30px 20px 30px !important;">
+		<div class="importantIconWithTitle">Important</div>
+    <br/>&nbsp;<br/>
+    <span style="font-size:24px !important;line-height:28px !important;">Track triggers and migraines every time they happen.
+    <br/>&nbsp;<br/>
+		<span style="font-size:20px !important;line-height:20px !important;">
+    	The more you track, the more accurate your results!
+		</span>
+		</span>
+    <br/>&nbsp;<br/>
+    <div class="mm_ButtonStyle3" tappable (tap)="setupDone();">Start Tracking</div>
+	</div>
+	<button class="btn_closeMe" (click)="o1hide = true;" >X</button>
+	</div>
+</div>
+
+
+<!-- view : overlay to ask if new trigger tracker
+<div id="deleteConfirmEndSetup_overlay" style="margin-top:20px;" class="oLay hideMe" ng-click="closeOverlay($event);">-->
+<div id="o2" class="oLay" (click)="oCalHide = true;" [ngClass]="{'hideMe' : oCalHide}">
+	<div class="popUpWrap">
+	<div class="popUpShort">
+	  <div class="popUpContent">
+<br/>
+		Would you like to delete this?
+		<br/><br/>
+    <div class="deleteBtnWrapInline">
+      <button (click)="deleteTracker_YES();oCalHide = true;" class="goBtn">Yes</button>
+    </div>
+    <br/>
+	  </div>
+
+	</div>
+	<button class="btn_closeMe" (click)="oCalHide = true;">X</button>
+	</div>
+
+</div>
+
+
+<!-- view : Overlay
+<div id="noSC_s6_overlay" style="margin-top:20px;" class="oLay hideMe" ng-click="closeOverlay($event);"> -->
+<div id="o3" class="oLay" (click)="o3hide = true;" [ngClass]="{'hideMe' : o3hide}">
+	<div class="popUpWrap">
+        <div class="popUpShort">
+            <div class="popUpContent">
+            <br/>
+            Input not valid. You may not use special characters.<br/>
+            Examples: " ! # $ % * + = - ; :
+            <br/><br/>
+            </div>
+        </div>
+        <button class="btn_closeMe" (click)="o3hide = true;">X</button>
+	</div>
+</div>
+
+
+
+  <div id="oAddTriggers" class="oLay" [ngClass]="{'hideMe' : oAddTriggersHide == true}" (click)="oAddTriggersHide = true;">
+      <div class="popUpWrap" (click)="$event.stopPropagation();">
+      <div class="popUp center" style="padding:20px !important;">
+      <br/>
+			          <div style="font-size:22px;color:white;">Add Tracker</div>
+
+													<!-- START Add Input Box -->
+												  <div style="position:relative;left:10px;margin:20px auto 20px auto !important;width:290px;">
+
+														<form (submit)="addTriggerTrackerFromInput();" class="center" style="height:70px;">
+
+															<input class="mm_input" type="text" id="input1"  name="input1" class="basicInput" style="position:absolute;left:0px;width:250px !important;border:0px solid red !important;"
+																		placeholder="something to track..." [(ngModel)]="theInput" ng-trim="false"
+																		autocomplete="off" autocorrect="off" spellcheck="false" />
+
+															<div style="position:absolute;top:0px;left:215px;border:2px solid white;background-color:#6cb4dc;display:block;width:60px;height:40px;margin:0px 0px; padding:8px 5px 0px 8px;color:white;font-size:16px;border-top-right-radius:12px;border-bottom-right-radius:12px;" (click)="addTriggerTrackerFromInput();">
+																	ADD
+																</div>
+														</form>
+													</div>
+
+														<!-- set trigger, treatment or symptom -->
+										        <div style="position:relative;min-height:110px !important;margin:0px 40px 0px 40px !important;" ng-class="{hideMe : currentName == 'Period'}">
+
+										          <ion-list id="rgroup" class="rgroup" radio-group [(ngModel)]="currentObjectType">
+										              <label>
+										              <ion-radio value="triggerEvent"></ion-radio>
+										              This is a Trigger
+										              </label><br/>
+										              <label>
+										              <ion-radio value="treatmentEvent"></ion-radio>
+										              This is a Treatment
+										              </label><br/>
+										              <label>
+										              <ion-radio value="symptomEvent"></ion-radio>
+										              This is a Symptom
+										              </label><br/>
+										          </ion-list>
+													</div>
+												</div>
+			<button class="btn_closeMe" (click)="oAddTriggersHide = true;">X</button>
+      </div>
+  </div>
+
+<!-- <ion-scroll direction="y" style="height:100% !important;" no-bounce> -->
+<div id="o4" class="oLay scrollMe" (click)="o4hide = true;" [ngClass]="{'hideMe' : o4hide}">
+    <div class="popUpWrap">
+      <div class="popUpShort">
+        <div class="popUpContent center" style="font-size:16px;">
+          <div style="font-size:22px;color:white;">More Examples</div>
+              <br/>
+        		  Here are more examples for you to investigate.
+        		  <br/><br/>
+        		  Smells: Perfume, gas fumes
+        		  <br/><br/>
+        		  Vision: Different pairs of glasses (you can enter a different trigger for each),
+        		  Eyestrain, Working on a computer, Sun glare
+        		  <br/><br/>
+        		  Noise: Construction noise, Sudden loud noise, Screaming baby, Plane noise
+        		  <br/><br/>
+        		  Places: Specific places such as an office, a meeting room, the woods, a movie theater
+        		  <br/><br/>
+        		  Other: Sitting at particular desk, Missed meals, Overly tired, Dust, Stress event, Different moods
+        		  <br/><br/>
+        		  Anything that you suspect could be a trigger - track it!
+              <br/>
+          </div>
+        </div>
+    <button class="btn_closeMe" (click)="o4hide = true;">X</button>
+  </div>
+</div>
+<!-- <ion-scroll> -->

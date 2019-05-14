@@ -1,0 +1,233 @@
+
+<!-- v1 before tabs <ion-header>
+<ion-navbar hideBackButton="true">
+    <button ion-button menuToggle start>
+        <img src="img/menu.png" class="menuImg" />
+    </button>
+    <ion-title class="toolbar-title-with-right-btn">What You're Tracking</ion-title>
+</ion-navbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title class="toolbar-title-with-right-btn">What You're Tracking</ion-title>
+    <ion-buttons end>
+      <!--  <button class="button-icon addBtn" icon-only (click)="goToExplorer();">
+            Timeline
+        </button> -->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content has-bounce has-bouncing>
+  <!-- class="no-scroll" has-bouncing="true" -->
+
+<div class="explainTitle" style="margin-top:20px !important;margin-bottom:0px !important;">Add Triggers, Treaments<br/>or Symptoms</div>
+
+  <!-- START Add Input Box -->
+  <div style="position:relative;margin:0px auto 35px auto !important;width:310px;">
+
+    <form [formGroup]="addForm" (submit)="addFromInput();">
+      <!-- <div class="i_p_Wrap" style="border:0px solid white;padding:12px 0px 10px 0px;"> -->
+          <input type="text" name="textInput" id="textInput" class="basicInput" style="position:relative;top:12px;left:5px;width:300px !important;"
+          formControlName="theInput" [(ngModel)]="theInput" placeholder="Coffee, Imitrex..."
+          onfocus="this.placeholder=''" ng-trim="false"
+          autocomplete="off" autocorrect="off" spellcheck="false" required />
+
+          <!-- PLACEHOLDER: ::-webkit-input-placeholder in css -->
+
+          <!-- <input type="text" name="imp" id="imp" class="basicInput"
+          style="width:calc(100% - 24px);margin:12px 12px 8px 12px;padding-left:12px !important;"
+          onfocus="this.placeholder=''" placeholder="Add to log..." autocorrect="off"
+          autocapitalize="sentences" required ng-trim="false"
+          [(ngModel)]="input1" (ngModelChange)="processTextChange();" [ngModelOptions]="{standalone: true}" />
+          -->
+      <!-- </div> -->
+
+      <!-- <div style="position:absolute;left:280px;border:0px solid white;vertical-align:middle;padding:10px 5px 8px 10px;"> -->
+          <div style="position:absolute;top:12px;left:245px;border:2px solid #6cb4dc;background-color:#6cb4dc;display:block;width:60px;
+          height:40px;margin:0px 0px; padding:10px 5px 0px 12px;color:white;font-size:16px;
+          font-weight:900; font-family: 'VagBold';border-top-right-radius:12px;border-bottom-right-radius:12px;"
+          (click)="addFromInput();">ADD
+          </div>
+      <!-- </div> -->
+
+    </form>
+  </div>
+  <!-- END Add Input Box -->
+
+
+<!-- START LISTS -->
+
+<!-- your triggers -->
+<div class="explainTitle" style="margin-top:18px !important;">What You're Tracking</div> <!-- lynn add back in fix todo | alphabetizeIt -->
+<!--[virtualScroll]="trackersActive.length ? trackersActive : []"         [approxItemHeight]="'70px'" [bufferRatio]="3.1" -->
+<ion-list class="wideWrap" id="yourTriggersDiv" no-lines [virtualScroll]="trackersActive" [approxItemHeight]="'58px'" [virtualTrackBy]="name" [bufferRatio]="3.1">
+
+<!-- <ion-list [virtualScroll]="noidungs | async" no-lines [virtualTrackBy]="identify"> -->
+
+  <!-- id="yourTriggersDiv"    *ngFor="let trig of trackersActive | async | alphabetizeIt"   -->
+  <ion-item class="wideTile greenBack" *virtualItem="let tracker" (click)="pickTriggerTA(tracker);">
+
+      <div class="pt_wideTileWordTitle2 imaTrackerTP" id={{tracker.name}}>{{ tracker.name }}</div>
+
+      <!-- treatment label -->
+      <div [ngClass]="{hideMe : tracker.type != 'treatmentEvent'}" style="position:absolute; top:27px;
+      left:30px !important; color:white; font-size:13px;">
+        Treatment
+      </div>
+
+      <!-- symptom label -->
+      <div [ngClass]="{hideMe : tracker.type != 'symptomEvent'}" style="position:absolute; top:27px;
+      left:30px !important; color:white; font-size:13px;">
+        Symptom
+      </div>
+  </ion-item>
+
+  <div class="wideTile dimBack" [ngClass]="{'hideMe' : mainListNotEmpty}">
+      <div class="pt_wideTileWordTitle2">None</div>
+  </div>
+</ion-list>
+
+<br clear="all">
+  <!-- paused title -->
+  <div class="explainTitle">Paused Items</div> <!-- [approxItemHeight]="'68px'" [virtualTrackBy]="name"  [approxItemHeight]="'70px'" [bufferRatio]="3.1"-->
+
+  <ion-list class="wideWrap" *ngFor="let tracker of trackersPaused" style="margin-bottom:10px !important;">
+  <!-- <ion-list class="wideWrap" id="yourTriggersDiv" no-lines [virtualScroll]="trackersPaused" [approxItemHeight]="'70px'" [virtualTrackBy]="name" [bufferRatio]="3.1"> -->
+    <!--   <ion-list class="wideWrap" *ngFor="let tracker of trackersPaused"> -->
+          <!-- paused list -->
+          <ion-item class="wideTile dimBack" (click)="pickTriggerPaused(tracker);">
+              <div class="pt_wideTileWordTitle2 imaTrackerTP"  id={{tracker.name}}>{{ tracker.name }}</div>
+          </ion-item>
+  </ion-list>
+
+          <!-- paused no-items message -->
+          <div class="wideWrap" style="margin-bottom:15px !important;">
+            <div class="wideTile dimBack" [ngClass]="{'hideMe' : pausedListNotEmpty}">
+              <div class="pt_wideTileWordTitle">None</div>
+            </div>
+          </div>
+
+<!-- <ion-list class="wideWrap" [virtualScroll]="trackersPausedFLO | async" [approxItemHeight]="'70px'" [virtualTrackBy]="name">
+    <ion-item class="wideTile dimBack" *virtualItem="let tracker" (click)="pickTriggerPaused(tracker);">
+        <div class="pt_wideTileWordTitle imaTrackerTP"  id={{tracker.name}}>{{ tracker.name }}</div>
+    </ion-item>
+    <div class="wideTile dimBack" [ngClass]="{'hideMe' : pausedListNotEmpty}">
+        <div class="pt_wideTileWordTitle">None</div>
+    </div>
+</ion-list> -->
+
+</ion-content>
+
+<!-- overlay -->
+<div class="oLay" (click)="o1Hide = true;closePTOverlay($event);"
+[ngClass]="{'hideMe' : o1Hide}">
+  <div class="popUpWrap" (click)="$event.stopPropagation();">
+    <div class="popUpVariableHeight center">
+        <div id="popUpImgAndName" >
+            <img [ngClass]="{hideMe : currentObject.imgname == 'custom'}" id="pt_overlayImg" src='img/things/{{currentObject.imgname}}_100.png'
+            style="height:34px;vertical-align: top !important;" />&nbsp;{{currentObject.name}}
+        </div>
+
+        <div class="popUpContent hideMe">
+            <div ng-class="{hideMe : showCurrentDescription == 'no'}"  style="font-size:14px;">
+                {{currentDescription}}
+                <br/><br/>
+            </div>
+                {{ currentTimesTrackedMessage }}
+        </div>
+
+        <hr class="mm_hr" style="height:3px;margin-bottom:15px !important;">
+
+        <!-- set trigger, treatment or symptom -->
+        <div style="position:relative;min-height:110px !important;margin:0px 40px 0px 40px !important;"
+        ng-class="{hideMe : currentName == 'Period'}">
+
+          <ion-list id="rgroup" class="rgroup" radio-group [(ngModel)]="currentObjectType">
+              <label>
+              <ion-radio value="triggerEvent"></ion-radio>
+              This is a Trigger
+              </label><br/>
+              <label>
+              <ion-radio value="treatmentEvent"></ion-radio>
+              This is a Treatment
+              </label><br/>
+              <label>
+              <ion-radio value="symptomEvent"></ion-radio>
+              This is a Symptom
+              </label><br/>
+          </ion-list>
+
+        </div>
+
+        <hr class="mm_hr" style="height:3px;margin-bottom:25px !important;">
+
+        <!-- TREATMENT amount controls (don't show if not treatment -->
+        <div [ngClass]="{hideMe : currentObjectType != 'treatmentEvent'}">
+
+          <div class="center" style="padding:0px 0px 15px 0px;font-size:16px;" [ngClass]="{hideMe : currentObject.treatment_showUnitAmount == false}">
+            Default Amount: &nbsp;&nbsp;<input id="defaultAmount" type="text" class="inputTextShort" style="color:#6cb4dc !important;margin-bottom:10px;" [(ngModel)]="currentObject.treatment_amount" />
+            <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Units: &nbsp;&nbsp;<input id="theUnits" autocapitalize="none" type="text" class="inputTextShort" style="color:#6cb4dc !important;" [(ngModel)]="currentObject.treatment_unitType" />&nbsp;
+          </div>
+
+          <div style="width:100%;text-align:right;" [ngClass]="{hideMe : currentObject.treatment_showUnitAmount == false}">
+            <div tappable (tap)="turnOffTreatmentAmt();" style="color:white !important;display:inline !important; border:0px
+          solid white !important;font-size:13px;text-decoration:underline;margin-right:30px;">Don't Track Units</div>
+          </div>
+
+          <div style="width:100%;text-align:center;" [ngClass]="{hideMe : currentObject.treatment_showUnitAmount == true}">
+            <div tappable (tap)="turnOnTreatmentAmt();" style="margin:15px auto 0px auto;color:white !important;display:inline !important; border:0px
+          solid white !important;font-size:16px;text-decoration:underline;">Track Amount as Units</div>
+          </div>
+
+          <hr class="mm_hr" style="height:3px;margin:22px 10px 5px 10px !important;">
+
+        </div>
+
+
+        <!-- pause tracking -->
+
+        <div style="margin-top:4px auto 4px auto !important">
+            <button (click)="pauseTracking();" class="redOnWhiteBtn" style="width:70% !important;">Pause Tracking</button>
+        </div>
+        <div class="popUpContent" style="font-size:15px;line-height:16px;padding:0px 10px;">
+          'Pause Tracking' lets you stop tracking for now. You can restart tracking later.
+        </div>
+        <hr class="mm_hr" style="height:3px;margin:15px 10px 15px 10px !important;">
+
+        <div class="deleteBtnWrap" style="margin:15px auto 25px auto !important;">
+                <button (click)="deleteTracker();" style="color:white !important;display:inline !important; border:0px
+                solid white !important;font-size:14px;text-decoration:underline;">
+                Delete Tracker</button>
+        </div>
+    </div>
+    <div class="btn_closeMe" tappable (tap)="o1Hide = true;closePTOverlay($event);">X</div>
+  </div> <!-- end popupWrap -->
+  <!-- </ion-scroll> -->
+</div>
+
+
+
+
+<!-- common  maybe add in later? todo future - remove base list (or, not!)
+<div class="explainTitle">Common Things to Track</div>
+<ion-list>
+  <ion-item class="wideTile blue1Back " *ngFor="let trig of baseList" (click)="pickTriggerBaseList(trig);">
+      <div class="pt_wideTileWordTitle">{{ trig.name }}</div>
+  </ion-item>
+</ion-list>
+
+-->
+<!-- <ion-list class="wideWrap" style="padding-top:10px !important;padding-bottom:10px;">
+  <ion-item class="wideTile greenBack" [ngClass]="{'greenBack' : (trig.onoff), 'dimBack' : (trig.onoff == false)}"
+  (click)="pickTrigger(trig);" *ngFor="let trig of triggerList">
+        <div class="wideTileWordTitleStyleCheckRight">{{ trig.name }}</div>
+        <div class="trackThisBtnWrap">
+          <img id="trackThisBtn" src="img/checkmark_white_100.png">
+        </div>
+  </ion-item>
+</ion-list> -->
+<!-- END LISTS -->

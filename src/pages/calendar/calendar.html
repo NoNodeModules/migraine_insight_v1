@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar hideBackButton="true"> <!-- If you don't need back here -->
+      <button ion-button menuToggle start>
+          <img src="img/menu.png" class="menuImg" />
+      </button>
+      <ion-title>{{viewTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="mm_content" id="calendar" has-bouncing="false" scroll="true" scrollY="false">
+
+  <!-- TOP CIRCLES -->
+  <div style="margin: 0px auto 0px auto !important; position:relative; height:135px !important;
+  width:320px !important;">
+      <div style="position:absolute;top:28px;left:16px;border: 5px solid #6cb4dc;background-color:
+      transparent;border-radius:50px;height:83px;width:83px;color:#6cb4dc;padding:11px 0px 0px 3px;
+      text-align:center;">
+          <div style="font:26px VagBold, bold !important;line-height:24px !important;margin-bottom:4px;
+          width:97%;background-color:transparent !important;">
+          {{migrainesLoggedAverage}}
+          </div>
+          <div style="font-size:11px;line-height:12px !important;">
+              Avg. Days<br/>Between
+          </div>
+      </div>
+
+      <div style="position:absolute;top:0px;left:110px;background-color: #6cb4dc;border-radius:50px;
+      height:95px;width:95px;color:white;margin:20px auto 30px auto;padding:16px 0px 0px 2px;
+      text-align:center;">
+          <div style="font:30px VagBold, bold !important;line-height:28px !important;margin-bottom:4px;
+          width:100%;color:white !important;background-color:transparent !important;">
+              {{numMigrainesThisMonth}}
+          </div>
+          <div style="font-size:13px;line-height:15px !important;color:white !important;">
+            Migraines<br/>in {{ titleMonth }}
+          </div>
+      </div>
+
+          <div style="position:absolute;top:28px;left:216px;border: 5px solid #6cb4dc;background-color:
+          transparent;border-radius:50px;height:83px;width:83px;color:#6cb4dc;padding:11px 0px 0px 3px;
+          text-align:center;">
+          <div style="font:26px VagBold, bold !important;line-height:24px !important;margin-bottom:4px;
+          width:97%;">{{eventsLogged}}</div>
+          <div style="font-size:11px;line-height:12px !important;">Events<br/>Logged</div>
+      </div>
+  </div>
+  <!-- END TOP CIRCLES -->
+
+  <!-- OLD <calendar ng-model="calendar.currentDate" calendar-mode="calendar.mode"
+            event-source="calendar.eventSource" range-changed="reloadSource(startTime, endTime)"
+            event-selected="onEventSelected(event)" title-changed="onViewTitleChanged(title)"
+            time-selected="onTimeSelected(selectedTime, events)" step="30">
+  </calendar> -->
+
+  <calendar [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"
+        (onCurrentDateChanged)="onCurrentDateChanged($event)"
+        (onRangeChanged)="reloadSource(startTime, endTime)"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        step="30">
+  </calendar>
+<br/>
+</ion-content>
+
+<!-- view : overlay -->
+<!-- view : overlay -->
+<div id="swipe_overlay" style="margin-top:90px;" class="oLay" [ngClass]="{hideMe : hideSwipeOverlay}"  (click)="hideSwipeOverlay = true;"
+(swipeleft)="hideSwipeOverlay = true;"  (swiperight)="hideSwipeOverlay = true;"> <!--   -->
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<div class="popUpWrap" ng-click="closeSwipeOverlay();$event.stopPropagation();">
+	<div class="popUpShort" style="height:200px;">
+        <img src="img/swipeToChangeMonth.png" width="250" style="position:absolute; top:10px;" />
+        <button class="whiteOnRedBtn" (click)="hideSwipeOverlay = true;" style="margin: 100px 25px 0px 25px !important;
+    background-color: #eef6fb !important; padding: 10px 15px !important; height: 36px !important; width: 200px;" >Got It</button>
+	</div>
+	</div>
+</div>

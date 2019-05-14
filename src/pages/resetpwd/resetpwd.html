@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar style="background-color:#3d60b3 !important;">
+    <ion-title>Forgot Password</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="no-scroll" style="background-color:white !important;margin:auto;padding:auto;">
+  <div style="width:320px;margin:auto !important;">
+
+      <form [formGroup]="resetpwdForm" (submit)="resetPwd()" novalidate class="fixpristine">
+
+            <input type="text" formControlName="email" name="email" id="email" #email class="mm_input" style="padding: 3px auto 0px auto !important;"
+             (focus)="errormessage = ''" onfocus="this.placeholder=''" placeholder="email address" autocorrect="off" autocapitalize="off" required ng-trim="false"
+             />
+
+            <ion-item class="systemMessage assertive" *ngIf="!resetpwdForm.controls.email.valid  && (emailChanged || submitAttempt)">
+              Please enter a valid email.
+            </ion-item>
+
+            <button class="mm_ButtonStyle1" style="margin:10px auto 0px auto;" ion-button block type="submit">
+              Send Reset Email
+            </button>
+
+      </form>
+
+  </div>
+</ion-content>

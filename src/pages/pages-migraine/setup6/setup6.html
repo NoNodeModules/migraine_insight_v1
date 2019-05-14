@@ -1,0 +1,42 @@
+<!-- Generated template for the Setup6Page page. -->
+
+<ion-content class="mm_content_setup" no-bounce>
+
+	<div class="setupTop">
+		<div class="setupTopIconAndTitle">Tracker Setup</div>
+	</div>
+
+        <div class="setupQuestionText" style="padding-top:10px !important;">
+            Do you get your period?
+            <div style="height:10px;line-height:10px;margin:0px;border:0px solid purple;">&nbsp;</div>
+
+            <div class="wideWrap" style="margin-bottom:5px !important;">
+                <button class="wideTileGreen" [ngClass]="{ 'dimBack' : period == false }" (click)="this.period=true;">
+                    <div class="wideTileWordTitleStyleCheckLeft" >Yes, I mensutrate.</div>
+                    <div class="trackThisBtnWrapLeft">
+                        <img id="trackThisBtn" [ngClass]="{'hideMe' : period == false, 'showMe' : period == true}" src="img/checkmark_white_100.png" />
+                    </div>
+                </button>
+            </div>
+
+            <div class="wideWrap">
+                <button class="wideTile" [ngClass]="{ 'dimBack' : period == true }" (click)="this.period=false;">
+                    <div class="wideTileWordTitleStyleCheckLeft">No, I don't.</div>
+                    <div class="trackThisBtnWrapLeft">
+                        <img id="trackThisBtn" [ngClass]="{'showMe' : period == false, 'hideMe' : period == true}" src="img/checkmark_white_100.png" />
+                    </div>
+                </button>
+            </div>
+
+            <div class="wideWrap">
+                <div class="wideTileInfo">
+                    Tracking your period is easy!<br/>&nbsp;<br/>Log 'Period' on the first day of<br/>your period every month. That's it.
+                </div>
+            </div>
+          </div>
+
+<div class="setupBottomBar">
+  <div class="mm_ButtonStyle3" tappable (tap)="goTo();">Next</div>
+</div>
+
+</ion-content>

@@ -1,0 +1,140 @@
+<!--
+  Generated template for the ReportAMigrainePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="true"> <!-- If you don't need back here -->
+      <button ion-button menuToggle start>
+          <img src="img/menu.png" class="menuImg" />
+      </button>
+      <ion-title>Report A Migraine</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="mm_content" (click)="this.keyboard.close();"> <!--  scrollbar-x="false" scrollbar-y="false" -->
+<ion-list [virtualScroll]="stubList" [approxItemHeight]="'58px'" [virtualTrackBy]="name" [bufferRatio]="3.1" style="border:0px solid yellow;width:96%;margin:0px auto !important;overflow-x:hidden !important;padding-top:0px !important;">
+<ion-item *virtualItem="let stub" class="howitworks" style="border:0px solid red;height:1195px !important;width:100% !important;margin:-15px auto 0px 8px !important;padding:0px 0px 0px 0px !important;text-align:center;z-index:30;">
+
+  <div class="explainTitle" style="margin:0px auto 8px auto !important;">When did it start?</div>
+  <!-- TIME -->
+  <div class="reportAMigraine_time">
+  <div style="border:0px solid red;position:relative;height:100%;" (click)="stopProp($event);">
+
+      <div style="border:0px solid red; position:absolute; top:8px; left:42px !important; width:40%; height:50px;
+      padding:0px; margin:0px;" ion-stop-event="click">
+          <div style="border-radius: 12px;font-size: 20px !important;line-height: 34px;width:110px !important;
+          height:32px !important; color: #ff4a54 !important;background-color:white !important;
+          padding: 0px 0px 10px 3px !important;text-align:center !important;" tappable (tap)="touchDate();">{{ theDateString }}</div>
+      </div>
+
+      <!-- Right Side -->
+      <div style="border:0px solid red; position:absolute; top:8px; left:192px !important; width:40%;
+      height:50px; margin:0px; text-align:center !important;" ion-stop-event="click">
+          <input type="time" name="startTime" id="startTime" class="timeBtn" style="line-height: 28px;padding:4px 0px 0px 12px !important;background-color:white !important;"
+          value="{{startTime | date:'HH:mm'}}" (change)="changeTime();"
+          placeholder="{{startTime | date:'HH:mm'}}" /> <!-- [(ngModel)]="startTime" -->
+
+          <!-- <input type="time" id="timeBtn" name="timeBtn" class="timeBtn" style="border: 2px solid #6cb4dc
+          !important;
+          float:left;margin:4px 0px 6px 12px !important; width:95px; height:33px
+          !important; display:inline; padding:8px 0px 0px 10px !important; font-size:15px
+          !important; display:block; -webkit-appearance:button; color: #6cb4dc !important;
+          border-radius:12px;" value="{{theDT | date:'HH:mm'}}" (change)="changeTime_InputPanel();"
+          placeholder="{{theDTString | date:'HH:mm'}}"> -->
+
+      </div>
+
+  </div>
+  </div>
+
+  <!-- Duration section -->
+  <div class="explainTitle" style="margin-bottom:0px !important;margin-top:30px !important;">
+    How long did it last?</div>
+  <div class="reportAMigraine_duration">
+
+      <input type="text" class="removeShadowFromInput" style="border-style:solid;" (click)="stopProp($event);" pattern="[0-9]*" [(ngModel)]="migObj.durationHours" class="inputDurationHours"
+      required onfocus="this.value = '';" />
+
+      <input type="text" style="border-style:solid;" (click)="stopProp($event);" pattern="[0-9]*" [(ngModel)]="migObj.durationMinutes" class="inputDurationMinutes"
+      required onfocus="this.value = '';" />
+
+      <div class="durationH">hours</div>
+      <div class="durationM">minutes</div>
+  </div>
+
+
+  <!-- SEVERITY section -->
+  <div class="explainTitle" style="margin-bottom:0px !important;margin-top:30px !important;">
+    How intense was it?
+  </div>
+  <div class="reportAMigraine_severity" (click)="stopProp($event);">
+
+      <!-- orig -->
+      <div [ngClass]="{'severityBtn_on' : sev0On, 'severityBtn_off' : !sev0On}" id="sev0" tappable (click)="updateSev('0');">0</div>
+      <div [ngClass]="{'severityBtn_on' : sev1On, 'severityBtn_off' : !sev1On}" id="sev1" tappable (click)="updateSev('1');">1</div>
+      <div [ngClass]="{'severityBtn_on' : sev2On, 'severityBtn_off' : !sev2On}"  id="sev2" tappable (click)="updateSev('2');">2</div>
+      <div [ngClass]="{'severityBtn_on' : sev3On, 'severityBtn_off' : !sev3On}"  id="sev3" tappable (click)="updateSev('3');">3</div>
+      <div [ngClass]="{'severityBtn_on' : sev4On, 'severityBtn_off' : !sev4On}"  id="sev4" tappable (click)="updateSev('4');">4</div>
+      <div [ngClass]="{'severityBtn_on' : sev5On, 'severityBtn_off' : !sev5On}"  id="sev5" tappable (click)="updateSev('5');">5</div>
+      <div [ngClass]="{'severityBtn_on' : sev6On, 'severityBtn_off' : !sev6On}" id="sev6" tappable (click)="updateSev('6');">6</div>
+      <div [ngClass]="{'severityBtn_on' : sev7On, 'severityBtn_off' : !sev7On}"  id="sev7" tappable (click)="updateSev('7');">7</div>
+      <div [ngClass]="{'severityBtn_on' : sev8On, 'severityBtn_off' : !sev8On}"  id="sev8" tappable (click)="updateSev('8');">8</div>
+      <div [ngClass]="{'severityBtn_on' : sev9On, 'severityBtn_off' : !sev9On}"  id="sev9" tappable (click)="updateSev('9');">9</div>
+      <div [ngClass]="{'severityBtn_on' : sev10On, 'severityBtn_off' : !sev10On}" id="sev10" tappable (click)="updateSev('10');">10</div>
+      <div class="lessSevere">less severe</div>
+      <div class="moreSevere">more severe</div>
+
+      <!-- <ion-list>
+        <div style="position:absolute; left:20px; top:15px; color:white;">0</div>
+        <div style="position:absolute; left:250px; top:15px; color:white;">10</div>
+      <ion-item style="position:relative;background-color:transparent; text-align:center;">
+          <ion-range style="color:white;width:210px;" [(ngModel)]="migObj.amount" min="0" max="10" step="1" snaps="true"></ion-range>
+      </ion-item>
+    </ion-list>
+    <div style="position:relative;">
+    <div style="position:absolute; left:20px; top:15px; color:white;">0</div>
+    <div style="position:absolute; left:250px; top:15px; color:white;">10</div>
+      <div class="range" id="green">
+        <i class="icon ion-ios7-lightbulb-outline"></i>
+        <input type="range"  min="0" max="10" step="1" snaps="true" name="volume" style="color:white;width:210px;" [(ngModel)]="migObj.amount">
+        <i class="icon ion-ios7-lightbulb"></i>
+      </div>
+    </div>  -->
+
+  </div>
+
+  <!-- Symptoms Section -->
+  <div class="explainTitle" style="margin:30px auto 0px auto !important;">
+    What symptoms?
+  </div>
+  <div style="font-size:14px;padding: 0px !important;margin: 0px auto 20px auto !important;
+    line-height: 8px;">(please include head pain location)</div>
+  <textarea (click)="stopProp($event);" style="width:100%;margin: 5px auto 0px auto;" [(ngModel)]="migObj.symptoms"
+  id="symptoms" class="mm_textarea" cols="30" rows="6"></textarea>
+
+  <!-- Notes Section -->
+  <div class="explainTitle" style="margin-bottom:0px !important;margin-top:30px !important;">Notes</div>
+  <textarea (click)="stopProp($event);" style="width:100%;margin: 10px auto 0px auto;" id="mm_textarea"
+  class="mm_textarea" cols="30" rows="6" [(ngModel)]="migObj.notes"></textarea>
+
+  <!-- Done button -->
+  <div class="wideWrap" style="width:100%;margin:35px auto 0px auto !important">
+      <button class="wideButton blue2Back" (click)="done();">Done</button>
+  </div>
+
+  <!-- Mesage -->
+  <div class="smallText blueText noMarginTop" style="width:100%;padding:20px !important;
+  margin:-10px auto 0px auto !important;word-wrap:normal;white-space: normal !important;">* Don't forget to add treatments on your log. Create trackers for your treatments on the What You're Tracking screen.
+  </div>
+
+  <!-- Delete button -->
+  <div class="wideWrap noMarginTop" style="width:100%;margin:15px auto 0px auto !important">
+   <button class="wideButton redBack" (click)="deleteMe();">Delete Migraine</button>
+  </div>
+
+</ion-item>
+</ion-list>
+</ion-content>

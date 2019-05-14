@@ -1,0 +1,22 @@
+{ // start added lynn
+  "files": [
+      "node_modules/typescript/lib/lib.es6.d.ts"
+  ],
+  "exclude": [
+      "node_modules"
+  ], // end added
+  "compilerOptions": {
+    "lib": ["es6"],
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ]
+}
+
+/* THIS FIXED IT https://stackoverflow.com/questions/49558076/firebase-functions-deploy-looking-in-wrong-directory-for-node-modules?noredirect=1&lq=1  */

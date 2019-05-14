@@ -1,0 +1,38 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.shinynewapp.migraineinsight"
+    },
+    "cordova-plugin-email-composer": {
+      "PACKAGE_NAME": "com.shinynewapp.migraineinsight"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "1808477442542137",
+      "APP_NAME": "Migraine Insight",
+      "PACKAGE_NAME": "com.shinynewapp.migraineinsight"
+    },
+    "cordova-plugin-google-analytics": {
+      "PACKAGE_NAME": "com.shinynewapp.migraineinsight"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.shinynewapp.migraineinsight"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.shinynewapp.migraineinsight"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.shinynewapp.migraineinsight"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.shinynewapp.migraineinsight"
+    }
+  },
+  "dependent_plugins": {}
+}

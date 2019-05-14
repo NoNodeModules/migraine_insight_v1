@@ -1,0 +1,43 @@
+<!--
+  Generated template for the Setup1Page page.
+-->
+
+<ion-content class="mm_content_setup no-scroll" no-bounce>
+
+  <div class="setupTop">
+		<div class="setupTopIconAndTitle">Get Started</div>
+	</div>
+
+	<div class="setupMiddle center">
+		<!-- <center> -->
+			<div class="setupQuestionText" style="font-size:22px !important;">How many migraines do you get per month?</div>
+			<input type=number [(ngModel)]="perMonth" pattern="\d*" class="mm_input mm_input_survey center" style="width:100px !important;
+    margin-top: 28px;text-align:center;" required /> <!--  ng-blur="questionPerMonth();" ng-change="questionPerMonth();" -->
+            <div style="height:10px;line-height:10px;margin:0px;border:0px solid purple;">&nbsp;</div>
+               <div class="mm_ButtonStyle3" tappable (tap)="showOverlay();">Next!</div>
+            <div style="height:10px;line-height:10px;margin:0px;border:0px solid purple;">&nbsp;</div>
+          <!--   <div class="setupQuestionText">
+			Next, we will create the list of your potential triggers.
+    </div> -->
+		<!-- </center> -->
+	</div>
+
+  <div id="overlay1" class="oLay" [ngClass]="{'hideMe' : overlay1 == false}" (click)="this.keyboard.close();">
+      <div class="popUpWrap">
+      <div class="popUpLonger center" style="padding:30px !important;">
+          <br/>
+          <span style="font-size:24px !important;line-height:24px !important;">
+            Let's create a list of triggers to track.<br/><br/>
+            <img src="img/makealist.png" width="120" style="margin:20px auto;" />
+            <br/><br/>
+            <span style="font-size:20px !important;line-height:20px !important;">
+              Don't worry! You can always add or remove items later.
+            </span>
+          </span>
+          <br/>&nbsp;<br/>
+          <div class="mm_ButtonStyle3 color2Text" (click)="goNow();">Go</div>
+      </div>
+      </div>
+  </div>
+
+</ion-content>

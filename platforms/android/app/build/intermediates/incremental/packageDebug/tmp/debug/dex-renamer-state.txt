@@ -1,0 +1,4 @@
+#Mon Nov 12 23:23:39 CST 2018
+base.0=/Users/lynnsmith/Documents/Apps/GitHub/migraine_insight_v1/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

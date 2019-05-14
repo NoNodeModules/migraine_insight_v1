@@ -1,0 +1,22 @@
+<div class="flip-container" [class.flipped]="flipCard">
+
+    <div class="flipper">
+
+        <div class="front">
+            <ng-content select=".flash-card-front"></ng-content>
+        </div>
+
+        <div class="back">
+            <ng-content select=".flash-card-back"></ng-content>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Generated template for the FlashCardComponent component
+<div>
+  {{text}}
+</div>
+-->

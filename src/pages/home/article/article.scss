@@ -1,0 +1,26 @@
+page-article {
+
+  .articleWrap {
+    margin:20px;
+  }
+
+  .articleTitle {
+    color:black;
+    font-size:18px;
+    padding:5px 0px;
+    font-family: 'Gotham', sans-serif !important;
+  }
+
+  .articleBody {
+    color:black;
+    font-size:14px;
+    padding:5px 0px;
+    font-family: 'Gotham', sans-serif !important;
+  }
+
+  .scroll-bar-indicator, .content-header
+  {
+  	display: none !important;
+  }
+
+}

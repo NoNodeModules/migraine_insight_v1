@@ -1,0 +1,7 @@
+{
+  "name": "MigraineMechanic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

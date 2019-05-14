@@ -1,0 +1,72 @@
+
+<ion-content class="mm_content_setup no-scroll" no-bounce>
+
+  	<div class="setupTop">
+  		<div class="setupTopIconAndTitle">Setup</div>
+  	</div>
+
+  	<ion-scroll class="setupMiddle center" direction="y" no-bounce>
+  		<div class="setupQuestionText">
+              Caffeine can affect migraines.
+              <br/>Do you consume caffeine?
+      </div>
+      <div style="height:10px;line-height:10px;margin:0px;border:0px solid purple;">&nbsp;</div>
+
+              <div class="wideWrap" style="margin-bottom:20px !important;">
+                  <button class="wideTile" [ngClass]="{ 'dimBack': noCaf == false }"
+                  (click)="noCaffeine()">
+                      <div class="wideTileWordTitleStyleCheckLeft">No</div>
+                      <div class="trackThisBtnWrapLeft" [ngClass]="{'hideMe': noCaf == false}">
+                          <img id="trackThisBtn" class="showMe" src="img/checkmark_white_100.png" />
+                      </div>
+                  </button>
+              </div>
+            <div class="setupQuestionText"> Yes, I eat or drink:
+              <div style="height:2px;line-height:13px;margin:0px;border:0px solid purple;">&nbsp;</div>
+          </div>
+
+        <div class="wideWrap" id="baseTriggersDiv">
+  			  <button class="wideTileGreen" [ngClass]="{'dimBack': on1 == false}"
+          (click)="pickTrigger(1);" id="Coffee">
+  				<div class="wideTileWordTitleStyleCheckRight ng-binding">Coffee</div>
+  				<div class="trackThisBtnWrap">
+  					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+  				</div>
+  			</button>
+        <button class="wideTileGreen" [ngClass]="{'dimBack': on2 == false}"
+        (click)="pickTrigger(2);" id="Tea">
+  				<div class="wideTileWordTitleStyleCheckRight ng-binding">Tea</div>
+  				<div class="trackThisBtnWrap">
+  					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+  				</div>
+  			</button>
+        <button class="wideTileGreen" [ngClass]="{'dimBack': on3 == false}"
+        (click)="pickTrigger(3);" id="Chocolate">
+  				<div class="wideTileWordTitleStyleCheckRight ng-binding">Chocolate</div>
+  				<div class="trackThisBtnWrap">
+  					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+  				</div>
+  			</button>
+        <button class="wideTileGreen" [ngClass]="{'dimBack': on4 == false}"
+        (click)="pickTrigger(4);" id="Soda Pop">
+  				<div class="wideTileWordTitleStyleCheckRight ng-binding">Soda Pop</div>
+  				<div class="trackThisBtnWrap">
+  					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+  				</div>
+  			</button>
+        <button class="wideTileGreen" [ngClass]="{'dimBack': on5 == false}"
+        (click)="pickTrigger(5);" id="Diet Soda Pop">
+  				<div class="wideTileWordTitleStyleCheckRight ng-binding">Diet Soda Pop</div>
+  				<div class="trackThisBtnWrap">
+  					<img id="trackThisBtn" src="img/checkmark_white_100.png">
+  				</div>
+  			</button>
+  		</div>
+
+  	</ion-scroll>
+
+    <div class="setupBottomBar">
+    	 <div class="mm_ButtonStyle3" tappable (tap)="goTo();">Next</div>
+    </div>
+
+</ion-content>
